@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Alert</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var message = '@ViewBag.Message';
+            var alertType = '@ViewBag.AlertType';
+
+            // Display alert based on type
+            if (message !== "") {
+                if (alertType === "success") {
+                    alert(message); // You can replace this with a custom alert or toast message library
+                } else if (alertType === "error") {
+                    alert(message); // You can replace this with a custom alert or toast message library
+                }
+            }
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+﻿@using PurpleIK.UI.Areas.CompanyManager.Models.VM.PushMoneyVM;
+@model PushMoneyAddVM
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Prim Ekleme Sayfası</h4>
+            <hr />
+            <table class="table table-striped">
+                <form asp-action="Add" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="PushMoneyAddItem.Type">Prim Tipi</label>
+                        <input asp-for=PushMoneyAddItem.Type class="form-control" />
+                        <span asp-validation-for="PushMoneyAddItem.Type" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PushMoneyAddItem.Amount">Prim Miktarı</label>
+                        <input asp-for=PushMoneyAddItem.Amount class="form-control" />
+                        <span asp-validation-for="PushMoneyAddItem.Amount" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PushMoneyAddItem.CurrencyUnit">Para Birimi</label>
+                        <input asp-for=PushMoneyAddItem.CurrencyUnit class="form-control" />
+                        <span asp-validation-for="PushMoneyAddItem.CurrencyUnit" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PushMoneyAddItem.Description">Açıklama</label>
+                        <input asp-for=PushMoneyAddItem.Description class="form-control" />
+                        <span asp-validation-for="PushMoneyAddItem.Description" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PushMoneyAddItem.PersonId">Personel</label>
+                        @if (Model != null && Model.Persons != null && Model.Persons.Any())
+                        {
+                            <select asp-for="PushMoneyAddItem.PersonId" class="form-control">
+                                <option value="">Çalışan Seç</option>
+                                @foreach (var person in Model.Persons)
+                                {
+                                    <option value="@person.Id">@person.FirstName @person.LastName - @person.CompanyEmail</option>
+                                }
+                            </select>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Çalışan bulunamadı.</span>
+                        }
+                        <span asp-validation-for="PushMoneyAddItem.PersonId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Kaydet</button>
+                    </div>
+                </form>
+            </table>
+        </div>
+    </div>
+</div>
+@* 
+<div>
+    <a asp-action="Index">Prim Listesine Geri Dön</a>
+</div> *@
+
+

@@ -1,0 +1,70 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.PersonalInformationVM.PersonalInformationEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+    var successMessage = TempData["SuccessInformationMessage"] as string;
+    var errorMessage = TempData["ErrorInformationMessage"] as string;
+}
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Özlük Belgesi Düzenleme Sayfası</h4>
+            <hr />
+            <table class="table table-striped">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="PersonalInformationEditItem.Id" />
+                    <div class="form-group">
+                        <label asp-for="PersonalInformationEditItem.FormName">Özlük Belgesi Adı</label>
+                        <input asp-for="PersonalInformationEditItem.FormName" class="form-control" required />
+                        <span asp-validation-for="PersonalInformationEditItem.FormName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <a href="@Url.Action("GetDocument", "PersonalInformation", new { id = Model.PersonalInformationEditItem.Id, layoutName = "Edit" })" class="btn btn-primary">Mevcut Pdf Dosyası Görüntüle</a>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="PersonalInformationEditItem.PersonalInformationFormFile">PDF Dosyası Yükle</label>
+                        <input asp-for="PersonalInformationEditItem.PersonalInformationFormFile" class="form-control" type="file"  accept=".pdf" />
+                        <span asp-validation-for="PersonalInformationEditItem.PersonalInformationFormFile" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="PersonalInformationEditItem.ManagerId" />
+                    <div class="form-group">
+                        <label asp-for="PersonalInformationEditItem.PersonId">Personel</label>
+                        @if (Model != null && Model.Persons != null && Model.Persons.Any())
+                        {
+                            <select asp-for="PersonalInformationEditItem.PersonId" class="form-control" required>
+                                <option value="">Çalışan Seç</option>
+                                @foreach (var person in Model.Persons)
+                                {
+                                    <option value="@person.Id">@person.FirstName @person.LastName - @person.CompanyEmail</option>
+                                }
+                            </select>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Çalışan bulunamadı.</span>
+                        }
+                        <span asp-validation-for="PersonalInformationEditItem.PersonId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group" align="center">
+                        <button type="submit" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Kaydet</button>
+                    </div>
+                </form>
+            </table>
+        </div>
+    </div>
+</div>

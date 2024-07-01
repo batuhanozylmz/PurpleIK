@@ -1,0 +1,19 @@
+﻿@using PurpleIK.UI.Areas.CompanyManager.Models.VM.PersonalInformationVM
+@model PersonalInformationIndexVM
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<p><strong>Form Name:</strong> @Model.FormName</p>
+<hr />
+@if (Model.PersonalInformationForm != null && Model.PersonalInformationForm.Length > 0)
+{
+    <img src="data:image;base64,@(Convert.ToBase64String(Model.PersonalInformationForm))" alt="PersonalInformation Form" class="img-fluid" />
+}
+else
+{
+    <p>Özlük Belgesi Bulunamadı.</p>
+}
+
+<a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-primary">Download PDF</a>
+

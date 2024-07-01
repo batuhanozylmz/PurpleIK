@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.plan {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+    .plan:hover {
+        background-color: #f5f5f5;
+    }
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #f00;
+}
+
+#selectPlan {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+
+    #selectPlan:hover {
+        background-color: #d00;
+    }

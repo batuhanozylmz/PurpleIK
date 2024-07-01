@@ -1,0 +1,135 @@
+﻿@model PurpleIK.UI.Areas.Admin.Models.VM.AdminVM.AdminIndexVM // Kullanacağınız model tipini belirtin
+@{
+    ViewData["Title"] = "Home";    
+}
+
+@* <h1>Hoş Geldiniz, @Model.UserName </h1> *@
+
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Şirketler</span></h4>
+                <hr />
+                <p>Aktif Şirketler: @Model.ActiveCompanys.Count</p>
+                <p>Pasif Şirketler: @Model.DeActiveCompanys.Count</p>
+                <p>Onay Bekleyen Şirketler: @Model.ApprovalCompanys.Count</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Şirket Yöneticileri</span></h4>
+                <hr />
+                <p>Aktif Şirketlerin Yöneticileri: @Model.ActiveCompanyAdmins.Count</p>
+                <p>Pasif Şirketlerin Yöneticileri: @Model.DeactiveCompanyAdmins.Count</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Şirket Çalışanları</span></h4>
+                <hr />
+                <p>Aktif Şirketlerin Çalışanları: @Model.ActiveEmployees.Count</p>
+                <p>Pasif Şirketlerin Çalışanları: @Model.DeactiveEmployees.Count</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Üyelik Takip</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Şirket Adı</th>
+                                <th>Üyelik Bitiş Tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.CompanyMemberships)
+                            {
+                                <tr>
+                                    <td>@item.CompanyName</td>
+                                    <td>@item.ExpiryDate.Value.ToString("dd.MM.yyyy")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Aktif Şirketler</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Şirket Adı</th>
+                                <th>Şirket Kurucusu</th>
+                                <th>Kayıt Olma Tarihi</th>
+                                <th>Şirket Çalışanları</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ActiveCompanys)
+                            {
+                                <tr>
+                                    <td>@item.CompanyName</td>
+                                    <td>@item.SuperManagerFirstName @item.SuperManagerLastName</td>
+                                    <td>@item.CreatedDate.Value.ToString("dd.MM.yyyy")</td>
+                                    <td>@item.NumberOfEmployees</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}
+

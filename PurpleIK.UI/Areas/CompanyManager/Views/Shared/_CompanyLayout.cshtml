@@ -1,0 +1,499 @@
+﻿@* @model PurpleIK.Entities.Person *@
+@using Microsoft.AspNetCore.Identity
+@using PurpleIK.Entities
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+@using Microsoft.AspNetCore.Mvc.Rendering
+@{
+    Layout = null; // Eğer Employee layoutunda başka bir layout kullanmak istemiyorsanız.
+}
+@{
+    var user = await UserManager.GetUserAsync(User); // Oturum açmış kullanıcıyı alın
+    var person = user.Persons.FirstOrDefault(); // Kullanıcıya bağlı kişiyi alın
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Purple Admin</title>
+    <!-- plugins:css -->
+    <link href="~/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="~/assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- start: Css -->
+    @* <link rel="stylesheet" type="text/css" href="~/asset/css/bootstrap.min.css"> *@
+
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/fullcalendar.min.css" />
+    <!-- end: Css -->
+
+    <link rel="shortcut icon" href="~/asset/img/logomi.png">
+
+
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!-- plugins -->
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/asset/css/plugins/fullcalendar.min.css" />
+
+    <!-- end: Css -->
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.ico" />
+</head>
+<body>
+
+    <div class="container-scroller">
+
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo" href="http://localhost:5000/CompanyManager/Company/Home">
+                    <img src="~/assets/images/logo.svg" alt="logo" style="width: 120px; height: auto;" />
+                    <span style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: relative;">IK</span>
+                </a>
+            </div>
+
+            <div class="navbar-menu-wrapper d-flex align-items-stretch">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+                @* <div class="search-field d-none d-md-block">
+                    <form class="d-flex align-items-center h-100" action="#">
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-transparent">
+                                <i class="input-group-text border-0 mdi mdi-magnify"></i>
+                            </div>
+                            <input type="text" class="form-control bg-transparent border-0" placeholder="Search projects">
+                        </div>
+                    </form>
+                </div> *@
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item d-none d-lg-block full-screen-link">
+                        <a class="nav-link">
+                            <i class="mdi mdi-fullscreen" id="fullscreen-button"></i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="mdi mdi-calendar"></i>
+                            <span class="count-symbol bg-warning"></span>
+                        </a>
+                        <div id="calendarDropdown" class="dropdown-menu dropdown-menu-left navbar-dropdown preview-list show" aria-labelledby="notificationDropdown">
+                            <style>
+                                #calendarDropdown.dropdown-menu-left {
+                                    left: auto;
+                                    right: 0;
+                                }
+
+                                #calendar {
+                                    width: 500px; /* İstediğiniz genişlik */
+                                    height: 450px; /* İstediğiniz yükseklik */
+                                }
+                            </style>
+                            <h6 class="p-3 mb-0">Takvim</h6>
+                            <div class="dropdown-divider"></div>
+                            <div class="preview-item-content d-flex align-items-start flex-column justify-content-center">
+                                <div id='calendar'></div>
+                            </div>
+                        </div>
+                    </li>
+
+
+                    
+                    <li class="nav-item nav-logout d-none d-lg-block">
+                        <a class="nav-link" href="/Account/SignOut">
+                            <i class="mdi mdi-power"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item nav-settings d-none d-lg-block">
+                        <a class="nav-link" href="#">
+                            <i class="mdi mdi-format-line-spacing"></i>
+                        </a>
+                    </li>
+                </ul>
+                <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+                    <span class="mdi mdi-menu"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item nav-profile">
+                        <a href="#" class="nav-link">
+                            <div class="nav-profile-image">
+                                @if (person != null && person.ProfilePhoto != null && person.ProfilePhoto.Length > 0)
+                                {
+                                    var imageBase64 = Convert.ToBase64String(person.ProfilePhoto);
+                                    var imageUrl = $"data:image;base64,{imageBase64}";
+                                    <img src="@imageUrl" alt="profile">
+                                }
+                                else
+                                {
+                                    <img src="~/assets/images/faces/face1.jpg" alt="profile">
+                                }
+                                <span class="login-status online"></span>
+                                <!--change to offline or busy as needed-->
+                                
+                            </div>
+
+                            <div class="nav-profile-text d-flex flex-column">
+                                <span class="font-weight-bold mb-2">@person?.FirstName @person?.LastName</span>
+                                <span class="text-secondary text-small">@await GetRoleNameAsync(person?.AppUserId)</span>
+                            </div>
+                            <i class="mdi mdi-bookmark-check text-success nav-profile-badge"></i>
+                        </a>
+                    </li>
+                    @* <button class="btn btn-block btn-lg btn-gradient-primary mt-4">Talep</button> *@
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="Company" asp-action="Home">
+                            <span class="menu-title">Ana Sayfa</span>
+                            <i class="mdi mdi-home menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="EmployeeManager" asp-action="ListEmployee">
+                            <span class="menu-title">Çalışanlar</span>
+                            <i class="mdi mdi-human-male-female menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="CompanyManagerPersmission" asp-action="Index">
+                            <span class="menu-title">İzinler</span>
+                            <i class="mdi mdi-airplane menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="PushMoney" asp-action="List">
+                            <span class="menu-title">Primler</span>
+                            <i class="mdi mdi-cash-multiple menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="Debit" asp-action="ListDebit">
+                            <span class="menu-title">Zimmetler</span>
+                            <i class="mdi mdi-animation menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="PersonalInformation" asp-action="Index">
+                            <span class="menu-title">Özlük Belgeleri</span>
+                            <i class="mdi mdi-file-outline menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="Shift" asp-action="Index">
+                            <span class="menu-title">Vardiyalar</span>
+                            <i class="mdi mdi-alarm-check menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="Expense" asp-action="Index">
+                            <span class="menu-title">Harcamalar</span>
+                            <i class="mdi mdi-file menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="Comment" asp-action="ListComment">
+                            <span class="menu-title">Yorum</span>
+                            <i class="mdi mdi-format-align-center menu-icon"></i>
+                        </a>                        
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="CompanyManager" asp-controller="CompanyMembership" asp-action="MembershipList">
+                            <span class="menu-title">Üyelik</span>
+                            <i class="mdi mdi-wallet-membership menu-icon"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Account" asp-action="PersonalSettings">
+                            <span class="menu-title">Ayarlar</span>
+                            <i class="mdi mdi-settings menu-icon"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    @RenderBody()
+
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                @* <footer class="footer">
+                    <div class="container-fluid d-flex justify-content-between">
+                        <span class="text-muted d-block text-center text-sm-start d-sm-inline-block">Copyright © bootstrapdash.com 2021</span>
+                        <span class="float-none float-sm-end mt-1 mt-sm-0 text-end"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin template</a> from Bootstrapdash.com</span>
+                    </div>
+                </footer> *@
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <!-- plugins:js -->
+    <script src="~/assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="~/assets/vendors/chart.js/Chart.min.js"></script>
+    <script src="~/assets/js/jquery.cookie.js" type="text/javascript"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="~/assets/js/off-canvas.js"></script>
+    <script src="~/assets/js/hoverable-collapse.js"></script>
+    <script src="~/assets/js/misc.js"></script>
+    <script src="~/assets/js/file-upload.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="~/assets/js/dashboard.js"></script>
+    <script src="~/assets/js/todolist.js"></script>
+    <!-- End custom js for this page -->
+    <!-- start: Javascript -->
+    <script src="~/asset/js/jquery.min.js"></script>
+    <script src="~/asset/js/jquery.ui.min.js"></script>
+    <script src="~/asset/js/bootstrap.min.js"></script>
+
+    <!-- plugins -->
+    <script src="~/asset/js/plugins/moment.min.js"></script>
+    <script src="~/asset/js/plugins/fullcalendar.min.js"></script>
+    <script src="~/asset/js/plugins/jquery.nicescroll.js"></script>
+    <!-- custom -->
+    <script src="~/asset/js/main.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#external-events .fc-event').each(function () {
+                // store data so the calendar knows to render an event upon drop
+                $(this).data('event', {
+                    title: $.trim($(this).text()), // use the element's text as the event title
+                    stick: true // maintain when user navigates (see docs on the renderEvent method)
+                });
+
+                // make the event draggable using jQuery UI
+                $(this).draggable({
+                    zIndex: 999,
+                    revert: true,      // will cause the event to go back to its
+                    revertDuration: 0  //  original position after the drag
+                });
+
+            });
+
+
+            $('#calendar').fullCalendar({
+                monthNames: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+                monthNamesShort: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'],
+                dayNames: ['Pazar', 'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi'],
+                dayNamesShort: ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
+                editable: true,
+                buttonText: {
+                    today: 'Bugün',
+                    month: 'Aylık',
+                    week: 'Hafta',
+                    day: 'Günlük',
+                    list: 'Liste',
+                    listMonth: 'Aylık Liste',
+                    listYear: 'Yıllık Liste',
+                    listWeek: 'Haftalık Liste',
+                    listDay: 'Günlük Liste'
+                },
+                header: {
+                    left: 'prev,next',
+                    center: 'title',
+                    right: 'month,agendaDay'
+                },
+
+                editable: true,
+                droppable: true, // this allows things to be dropped onto the calendar
+                drop: function (date, jsEvent, ui) {
+
+                    // is the "remove after drop" checkbox checked?
+                    if ($('#drop-remove').is(':checked')) {
+                        // if so, remove the element from the "Draggable
+                        //
+                        //
+                        //
+                        //
+                        //
+                        //
+                        //
+                        // " list
+                        $(this).remove();
+                    }
+                },
+                events: [
+                    {
+                        title: 'Kurban Bayramı', // Dini bayramın adı
+                        start: '2024-06-16', // Dini bayramın tarihi (YYYY-MM-DD formatında)
+                        end: '2024-06-20',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Ramazan Bayramı',
+                        start: '2024-04-10',
+                        end: '2024-04-13', // Ramazan Bayramı birkaç gün sürer
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Yılbaşı', // Özel günün adı
+                        start: '2024-01-01', // Özel günün tarihi (YYYY-MM-DD formatında)
+                        color: '#9a55ff' // Opsiyonel: Özel günün rengi
+                    },
+                    {
+                        title: 'Ulusal Egemenlik ve Çocuk Bayramı',
+                        start: '2024-04-23',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'İşçi Bayramı',
+                        start: '2024-05-01',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Atatürk\'ü Anma, Gençlik ve Spor Bayramı',
+                        start: '2024-05-19',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Zafer Bayramı',
+                        start: '2024-08-30',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Cumhuriyet Bayramı',
+                        start: '2024-10-29',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'Vardiya',
+                        start: '2024-04-18',
+                        color: '#9a55ff'
+                    },
+                    {
+                        title: 'İzin Günü',
+                        start: '2024-04-19',
+                        color: '#9a55ff'
+                    }
+                    // Daha fazla özel gün ekleyebilirsiniz
+                ],
+                eventRender: function (event, element) {
+                    element.find('.fc-title')
+                        .css('font-size', 'smaller') // Yazı boyutunu küçült
+                        .css('background-color', '#9a55ff') // Arkaplan rengini ayarla
+                        .css('color', 'white'); // Yazı rengini ayarla
+                }
+            });
+
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var notificationDropdown = document.getElementById('notificationDropdown');
+            var calendarDropdown = document.getElementById('calendarDropdown');
+            var isOpen = false;
+
+            // Takvim alanına tıklandığında menünün kapanmasını engeller
+            calendarDropdown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Dropdown menüsüne tıkladığınızda sayfa yenilenmesini engeller
+            });
+
+            // Dışarı tıklandığında menüyü kapatır
+            document.addEventListener('click', function (event) {
+                if (!notificationDropdown.contains(event.target) && isOpen) {
+                    calendarDropdown.classList.remove('show');
+                    isOpen = false;
+                }
+            });
+
+            // Butona tıklandığında takvimi göster veya gizle
+            notificationDropdown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Dropdown menüsüne tıkladığınızda sayfa yenilenmesini engeller
+                isOpen = !isOpen;
+                if (isOpen) {
+                    calendarDropdown.classList.add('show');
+                } else {
+                    calendarDropdown.classList.remove('show');
+                }
+            });
+
+            // Sayfa açıldığında takvimi gizle
+            calendarDropdown.classList.remove('show');
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var messageDropdown = document.getElementById('messageDropdown');
+            var photoDropdown = document.getElementById('photoDropdown');
+            var isOpen = false;
+
+            // Fotoğraf alanına tıklandığında menünün kapanmasını engeller
+            photoDropdown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Dropdown menüsüne tıkladığınızda sayfa yenilenmesini engeller
+            });
+
+            // Dışarı tıklandığında menüyü kapatır
+            document.addEventListener('click', function (event) {
+                if (!messageDropdown.contains(event.target) && isOpen) {
+                    photoDropdown.classList.remove('show');
+                    isOpen = false;
+                }
+            });
+
+            // Butona tıklandığında fotoğrafı göster veya gizle
+            messageDropdown.addEventListener('click', function (event) {
+                event.stopPropagation(); // Dropdown menüsüne tıkladığınızda sayfa yenilenmesini engeller
+                isOpen = !isOpen;
+                if (isOpen) {
+                    photoDropdown.classList.add('show');
+                } else {
+                    photoDropdown.classList.remove('show');
+                }
+            });
+
+            // Sayfa açıldığında fotoğrafı gizle
+            photoDropdown.classList.remove('show');
+        });
+    </script>
+
+
+
+
+
+    <!-- custom -->
+    
+    <!-- end: Javascript -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+
+@functions {
+    private async Task<string> GetRoleNameAsync(Guid? userId)
+    {
+        if (!userId.HasValue)
+            return string.Empty;
+
+        var userManager = Context.RequestServices.GetRequiredService<UserManager<AppUser>>();
+        var user = await userManager.FindByIdAsync(userId.ToString());
+        var roleNames = await userManager.GetRolesAsync(user);
+        return roleNames.FirstOrDefault();
+    }
+}
+

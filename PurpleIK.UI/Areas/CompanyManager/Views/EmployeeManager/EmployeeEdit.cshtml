@@ -1,0 +1,217 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.EmployeeManagerVM.EmployeeEditVM
+
+@{
+    ViewData["Title"] = "Employee Edit";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Çalışan Düzenleme Sayfası</h4>
+            <hr />
+            <form asp-action="EmployeeEdit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+                <input asp-for="CompanyName" type="hidden" />
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <img id="image-preview" src="@Model.PictureBase64" style="max-width: 100px; max-height: 100px;" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Picture_" class="col-sm-3 col-form-label">Resim:</label>
+                            <div class="col-sm-9">
+                                <input id="Picture_" asp-for="Picture_" type="file" class="form-control" accept=".jpg, .jpeg, .png, .gif"/>
+                                <span asp-validation-for="Picture_" class="text-danger"></span>
+                                <span id="picture-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="FirstName" class="col-sm-3 col-form-label">Ad:</label>
+                            <div class="col-sm-9">
+                                <input id="FirstName" asp-for="FirstName" class="form-control" required />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                                <span id="first-name-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="LastName" class="col-sm-3 col-form-label">Soyad:</label>
+                            <div class="col-sm-9">
+                                <input id="LastName" asp-for="LastName" class="form-control" required />
+                                <span asp-validation-for="LastName" class="text-danger"></span>
+                                <span id="last-name-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="BirthDate" class="col-sm-3 col-form-label">Doğum Tarihi:</label>
+                            <div class="col-sm-9">
+                                <input id="BirthDate" asp-for="BirthDate" type="date" class="form-control" required />
+                                <span asp-validation-for="BirthDate" class="text-danger"></span>
+                                <span id="birth-date-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="BirthPlace" class="col-sm-3 col-form-label">Doğum Yeri:</label>
+                            <div class="col-sm-9">
+                                <input id="BirthPlace" asp-for="BirthPlace" class="form-control" required />
+                                <span asp-validation-for="BirthPlace" class="text-danger"></span>
+                                <span id="birth-place-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Gender" class="col-sm-3 col-form-label">Cinsiyet:</label>
+                            <div class="col-sm-9">
+                                <select id="Gender" asp-for="Gender" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Gender>()" class="form-control" required>
+                                    <option value="">Cinsiyet Seçiniz</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                                <span id="gender-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="CitizenId" class="col-sm-3 col-form-label">Kimlik No:</label>
+                            <div class="col-sm-9">
+                                <input id="CitizenId" asp-for="CitizenId" class="form-control" required />
+                                <span asp-validation-for="CitizenId" class="text-danger"></span>
+                                <span id="citizen-id-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="StartDate" class="col-sm-3 col-form-label">İşe Baş. Tar:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="StartDate" class="form-control" required />
+                                <span asp-validation-for="StartDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="PersonalEmail" class="col-sm-3 col-form-label">Kişisel Email:</label>
+                            <div class="col-sm-9">
+                                <input id="PersonalEmail" asp-for="PersonalEmail" type="email" class="form-control" required />
+                                <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+                                <span id="personal-email-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Address" class="col-sm-3 col-form-label">Adres:</label>
+                            <div class="col-sm-9">
+                                <textarea id="Address" asp-for="Address" class="form-control" rows="5" required></textarea>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                                <span id="address-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="PersonalPhoneNumber" class="col-sm-3 col-form-label">Cep Telefonu:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="PersonalPhoneNumber" class="form-control" placeholder="XXX XXX XXXX" pattern="\d{3} \d{3} \d{4}" title="Lütfen bu formata uygun yazınız XXX XXX XXXX (örn: 555 555 5555)" required />
+                                <span asp-validation-for="PersonalPhoneNumber" class="text-danger"></span>
+                                <span id="personal-phone-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Department" class="col-sm-3 col-form-label">Departmanı:</label>
+                            <div class="col-sm-9">
+                                <select asp-for="Department" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Department>()" class="form-control" required>
+                                    <option value="">Departman Seçiniz</option>
+                                </select>
+                                <span asp-validation-for="Department" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="SelectedRole" class="col-sm-3 col-form-label">Rol:</label>
+                            <div class="col-sm-9">
+                                <select asp-for="SelectedRole" class="form-control" required>
+                                    <option value="">Çalışan Rolü</option>
+                                    <option value="companymanager">Şirket Yöneticisi</option>
+                                    <option value="employee">Çalışan</option>
+                                </select>
+                                <span asp-validation-for="SelectedRole" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    // Ad ve soyad alanlarını al
+    var firstNameInput = document.getElementById("FirstName");
+    var lastNameInput = document.getElementById("LastName");
+    var companyEmailInput = document.getElementById("CompanyEmail");
+
+    // Blur olayını dinleyerek otomatik e-posta adresi oluştur
+    firstNameInput.addEventListener("blur", updateCompanyEmail);
+    lastNameInput.addEventListener("blur", updateCompanyEmail);
+
+    // Otomatik e-posta adresini oluştur
+    function updateCompanyEmail() {
+        var firstName = firstNameInput.value.trim();
+        var lastName = lastNameInput.value.trim();
+
+        // Ad ve soyad dolu ise
+        if (firstName && lastName) {
+            var companyEmail = `${firstName.toLowerCase()}.${lastName.toLowerCase()}`;
+            companyEmailInput.value = companyEmail;
+        }
+    }
+    function previewImage(input) {
+        var preview = document.getElementById('image-preview');
+        var file = input.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function () {
+            preview.src = reader.result;
+        };
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "#";
+        }
+    }
+</script>

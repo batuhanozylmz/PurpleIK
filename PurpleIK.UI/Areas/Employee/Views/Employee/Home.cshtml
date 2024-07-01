@@ -1,0 +1,235 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using PurpleIK.Entities
+@model PurpleIK.UI.Areas.Employee.Models.VM.EmployeeVM.EmployeeIndexVM
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+            <i class="mdi mdi-home"></i>
+        </span> Anasayfa
+    </h3>
+</div>
+
+<div class="row">    
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">İzin Bilgilerim</span></h4>
+                <hr />
+                @{
+                    // Calculate total days based on the duration of work
+                    int totalDays = 0;
+                    int workDurationMonths = (DateTime.Now.Year - Model.Person.StartDate.Value.Year) * 12 + DateTime.Now.Month - Model.Person.StartDate.Value.Month;
+                    if (workDurationMonths >= 120) // 10 years or more
+                    {
+                        totalDays = 30;
+                    }
+                    else if (workDurationMonths >= 12) // 1 year or more
+                    {
+                        totalDays = 20;
+                    }
+                    else if (workDurationMonths >= 6) // 6 months or more
+                    {
+                        totalDays = 14;
+                    }
+                    else
+                    {
+                        totalDays = 14;
+                    }
+
+                    int usedPermissions = Convert.ToInt32(Model.PersonPermission.Sum(item => item.NumberOfDays));
+                }
+                <h4 align="left"><span style="color: #00CED1 ;">Toplam İzin:@(totalDays)</span></h4>
+                <div class="progress">
+                    <div class="progress-bar bg-gradient-success" role="progressbar" style="width: @(Model.PersonPermission.Sum(item => item.NumberOfDays) * 100 / totalDays)%" aria-valuenow="@(Model.PersonPermission.Sum(item => item.NumberOfDays) * 100 / totalDays)" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div style="display: flex; justify-content: space-between;">
+                    <h4 style="color: orange; margin-right: 10px;">@(usedPermissions)</h4>
+                    <h4 style="color: red;">@(totalDays - usedPermissions)</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>İzin Tipi</th>
+                                <th>Tarih</th>
+                                @* <th>Gün</th> *@
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PersonPermission)
+                            {
+                                <tr>
+                                    <td>@item.Permission.PermissionType</td>
+                                    <td><span style="opacity: 0.6;">@item.NumberOfDays</span><span style="opacity: 0.6;">g</span> @item.StartDate.Value.ToShortDateString()</td>
+                                    @* <td>@item.NumberOfDays</td> *@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div align="right">
+                    <a asp-area="" asp-controller="PersonPermission" asp-action="Index" class="btn btn-block btn-lg btn-gradient-primary mt-4" style="text-decoration: none;" align="right">Tüm İzinler</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Yaklaşan İzinler</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Çalışan</th>
+                                <th>İzin Tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OtherEmployeesPermissions)
+                            {
+                                <tr>
+                                    <td>@item.Person.FirstName @item.Person.LastName</td>
+                                    <td><span style="opacity: 0.6;">@item.NumberOfDays</span><span style="opacity: 0.6;">g</span> @item.StartDate.Value.ToShortDateString()</td>
+                                    @* <td>@item.StartDate.Value.ToShortDateString()</td> *@
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Doğum Günleri</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Çalışan</th>
+                                <th>İzin Tarihi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Persons)
+                            {
+                                <tr>
+                                    <td>@item.FirstName @item.LastName</td>
+                                    <td>@item.BirthDate.Value.ToShortDateString()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Resmi Tatiller</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Adı</th>
+                                <th>Tarih</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PublicHolidays)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td><span style="opacity: 0.6;">@item.NumberOfDays</span><span style="opacity: 0.6;">g</span> @item.Date.Value.ToShortDateString()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <div class="col-md-12 grid-margin stretch-card d-flex flex-column justify-content-between">
+        <div class="card h-100">
+            <div class="card-body">
+                <h4 class="card-title" align="center"><span style="color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;position: relative;">Bu Haftaki Vardiyalarım</span></h4>
+                <hr />
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Adı</th>
+                                <th>Tarih</th>
+                                <th>Saat Aralığı</th>
+                                <th>İlk Molam</th>
+                                <th>İkinci Molam</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Shifts)
+                            {
+                                <tr>
+                                    <td>@item.Name</td>
+                                    <td>@item.ShiftDate.Value.ToShortDateString()</td>
+                                    <td>@item.StartTime-@item.EndTime</td>
+                                    <td>@item.BreakTimeOneStart-@item.BreakTimeOneEnd</td>
+                                    <td>@item.BreakTimeSecondStart-@item.BreakTimeSecondEnd</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@functions {
+    private async Task<string> GetRoleNameAsync(Guid? userId)
+    {
+        var userManager = Context.RequestServices.GetRequiredService<UserManager<AppUser>>();
+        var user = await userManager.FindByIdAsync(userId.ToString());
+        var roleNames = await userManager.GetRolesAsync(user);
+        return roleNames.FirstOrDefault();
+    }
+    private async Task<string?> GetManagerNameAsync(Guid? userId)
+    {
+        var userManager = Context.RequestServices.GetRequiredService<UserManager<AppUser>>();
+        var user = await userManager.FindByIdAsync(userId.ToString());
+
+        // Kullanıcının yönetici rolüne sahip olup olmadığını kontrol et
+        if (await userManager.IsInRoleAsync(user, "companymanager"))
+        {
+            // Kullanıcının bağlı olduğu kişiyi al
+            var person = user.Persons.FirstOrDefault();
+            if (person != null && person.CompanyId.HasValue)
+            {
+                // Aynı şirketteki diğer kullanıcıları al
+                var otherUsersInCompany = userManager.Users.Where(u => u.Persons.Any(p => p.CompanyId == person.CompanyId && p.Id != person.Id));
+                // Diğer kullanıcılar arasında yönetici var mı kontrol et
+                var otherAdmin = otherUsersInCompany.FirstOrDefault(u => userManager.IsInRoleAsync(u, "companymanager").Result);
+                if (otherAdmin != null)
+                {
+                    // Diğer yöneticiyi döndür
+                    return $"{otherAdmin.Persons.FirstOrDefault()?.FirstName} {otherAdmin.Persons.FirstOrDefault()?.LastName}";
+                }
+            }
+        }
+
+        return null;
+    }
+
+}
+
+
+

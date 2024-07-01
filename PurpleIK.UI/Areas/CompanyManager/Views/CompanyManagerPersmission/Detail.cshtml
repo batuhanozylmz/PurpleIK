@@ -1,0 +1,36 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.PermissionVM.ManagerPermissionIndexVM
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">İzin Detay Sayfası</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>Çalışan Ad Soyad:</dt>
+                <dd> @Html.DisplayFor(model => model.Employee)</dd>
+               
+                <dt>Çalışan Rolü</dt>
+                <dd> @Html.DisplayFor(model => model.Role) </dd>
+               
+                <dt>Başlangıç Tarihi:</dt>
+                <dd>@Html.DisplayFor(model => model.StartDate)</dd>
+
+                <dt>Bitiş Tarihi:</dt>
+                <dd>@Html.DisplayFor(model => model.EndDate)</dd>
+
+                <dt>Gün Sayısı:</dt>
+                <dd>@Html.DisplayFor(model => model.NumberOfDays)</dd>
+
+                <dt>Cevap Tarihi:</dt>
+                <dd>@Html.DisplayFor(model => model.DateOfReply)</dd>
+
+                <dt>Red Etme Nedeni:</dt>
+                <dd>@Html.DisplayFor(model => model.ReasonOfRejection)</dd>
+
+                <dt>Şirket Yöneticisi:</dt>
+                <dd>@Html.DisplayFor(model => model.CompanyManagerName)</dd>
+            </dl>
+        </div>
+    </div>
+</div>
+

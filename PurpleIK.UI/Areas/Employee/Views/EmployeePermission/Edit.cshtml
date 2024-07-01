@@ -1,0 +1,93 @@
+﻿@model PurpleIK.UI.Areas.Employee.Models.VM.EmployeePermision.EmployeePermissionsEditVM
+
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="Id" type="hidden" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="StartDate">Başlangıç Tarihi</label>
+                    <input asp-for="StartDate" id="StartDate" type="date" class="form-control" required onchange="calculateDays()" />
+                    <span asp-validation-for="StartDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EndDate">Bitiş Tarihi</label>
+                    <input asp-for="EndDate" id="EndDate" type="date" class="form-control" required onchange="checkEndDate(); calculateDays();" />
+                    <span asp-validation-for="EndDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NumberOfDays" class="control-label">Gün Sayısı:</label>
+                    <input asp-for="NumberOfDays" id="NumberOfDays" class="form-control" readonly required />
+                    <span asp-validation-for="NumberOfDays" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <a href="@Url.Action("GetDocument", "EmployeePermission", new { id = Model.Id, layoutName = "Edit" })" class="btn btn-primary">Mevcut Pdf Dosyası Görüntüle</a>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PermissionFile">PDF Dosyası Yükle</label>
+                    <input asp-for="PermissionFile" class="form-control" type="file" accept=".pdf" />
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        // JavaScript kullanarak bitiş tarihinin başlangıç tarihinden önce olup olmadığını kontrol etme
+        function checkEndDate() {
+            var startDate = new Date(document.getElementById("StartDate").value);
+            var endDate = new Date(document.getElementById("EndDate").value);
+
+            if (endDate < startDate) {
+                alert("Bitiş tarihi başlangıç tarihinden önce olamaz!");
+                document.getElementById("EndDate").value = ""; // Bitiş tarihini temizleme
+            }
+        }
+
+        // JavaScript kullanarak başlangıç ve bitiş tarihleri arasındaki gün sayısını hesaplama ve gün sayısı alanına yazma
+        function calculateDays() {
+            var startDate = new Date(document.getElementById("StartDate").value);
+            var endDate = new Date(document.getElementById("EndDate").value);
+
+            var timeDiff = Math.abs(endDate.getTime() - startDate.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            document.getElementById("NumberOfDays").value = diffDays; // Gün sayısı alanına yazma
+        }
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}

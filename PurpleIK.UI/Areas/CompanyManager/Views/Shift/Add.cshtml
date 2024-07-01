@@ -1,0 +1,76 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.ShiftVM.ShiftAddVM
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Personele Vardiya Ekleme Sayfası</h4>
+            <hr />
+            <form asp-action="Add" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.PersonId">Personel</label>
+                    @if (Model != null && Model.Persons != null && Model.Persons.Any())
+                    {
+                        <select asp-for="ShiftAddItem.PersonId" class="form-control" required>
+                            <option value="">Çalışan Seç</option>
+                            @foreach (var person in Model.Persons)
+                            {
+                                <option value="@person.Id">@person.FirstName @person.LastName - @person.CompanyEmail</option>
+                            }
+                        </select>
+                    }
+                    else
+                    {
+                        <span class="text-danger">Çalışan bulunamadı.</span>
+                    }
+                    <span asp-validation-for="ShiftAddItem.PersonId" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.Name" class="control-label">Vardiya Adı</label>
+                    <input asp-for="ShiftAddItem.Name" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.ShiftDate" class="control-label">Vardiya Tarihi</label>
+                    <input asp-for="ShiftAddItem.ShiftDate" type="date" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.ShiftDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.StartTime" class="control-label">Başlangıç Saati</label>
+                    <input asp-for="ShiftAddItem.StartTime" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.StartTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.EndTime" class="control-label">Bitiş Saati</label>
+                    <input asp-for="ShiftAddItem.EndTime" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.EndTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.BreakTimeOneStart" class="control-label">Birinci Mola Başlangıç Saati</label>
+                    <input asp-for="ShiftAddItem.BreakTimeOneStart" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.BreakTimeOneStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.BreakTimeOneEnd" class="control-label">Birinci Mola Bitiş Saati</label>
+                    <input asp-for="ShiftAddItem.BreakTimeOneEnd" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.BreakTimeOneEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.BreakTimeSecondStart" class="control-label">İkinci Mola Başlangıç Saati</label>
+                    <input asp-for="ShiftAddItem.BreakTimeSecondStart" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.BreakTimeSecondStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftAddItem.BreakTimeSecondEnd" class="control-label">İkinci Mola Bitiş Saati</label>
+                    <input asp-for="ShiftAddItem.BreakTimeSecondEnd" type="time" class="form-control" required />
+                    <span asp-validation-for="ShiftAddItem.BreakTimeSecondEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

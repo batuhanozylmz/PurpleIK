@@ -1,0 +1,66 @@
+﻿@model IEnumerable<PurpleIK.UI.Areas.Admin.Models.VM.MembershipVM.MembershipIndexVM>
+
+@{
+    ViewData["Title"] = "Memberships";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+
+@{
+    // TempData'den ErrorMessage anahtarlarını al
+
+    var errorMessage = TempData["MembershipsErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<div class="container-fluid bg-breadcrumb py-5">
+    <div class="container text-center py-5">
+        <h3 class="text-white display-3 mb-4">Planlar</h3>
+
+    </div>
+</div>
+
+<div class="container-fluid pricing py-5" style="background: #9a55ff;">
+    <div class="container py-5">
+        <div class="owl-carousel pricing-carousel">
+
+            @foreach (var plan in Model)
+            {
+                <div class="pricing-item">
+                    <div class="rounded pricing-content">
+                        <div class="d-flex align-items-center justify-content-between bg-light rounded-top border-3 border-bottom border-primary p-4">
+                            <h2 class="display-4 mb-0"><small class="align-top text-muted" style="font-size: 22px; line-height: 45px;">TL</small>@plan.Price</h2>
+                            <h5 class="text-primary text-uppercase m-0">@plan.Name</h5>
+                        </div>
+                        <div class="p-4">
+                            <p>@plan.NumberOfEmployee maksimum çalışan sayısı</p>
+                            <p>@plan.Description </p>
+                            <p class="price">@plan.Price.ToString("C")/@plan.SubscriptionPeriod</p>
+                            <form method="get" action="@Url.Action("CompanyRegister", "Account")">
+                                <input type="hidden" name="planId" value="@plan.Id" />
+                                <button type="submit" class="btn btn-primary btn-primary-outline-0 rounded-pill my-2 px-4">Plan Seçiniz</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+
+            }
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>     
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}

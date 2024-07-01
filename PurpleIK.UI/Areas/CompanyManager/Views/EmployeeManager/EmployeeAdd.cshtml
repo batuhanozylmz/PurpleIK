@@ -1,0 +1,378 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.EmployeeManagerVM.EmployeeAddVM
+
+@{
+    ViewData["Title"] = "EmployeeAdd";
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Çalışan Ekleme Sayfası</h4>
+            <hr />
+        <form asp-action="EmployeeAdd" method="post" enctype="multipart/form-data" onsubmit="return validateInput()" class="form-sample">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="FirstName" class="col-sm-3 col-form-label">Ad:</label>
+                        <div class="col-sm-9">
+                            <input id="FirstName" asp-for="FirstName" class="form-control" required />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                            <span id="first-name-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="LastName" class="col-sm-3 col-form-label">Soyad:</label>
+                        <div class="col-sm-9">
+                            <input id="LastName" asp-for="LastName" class="form-control" required />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                            <span id="last-name-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="BirthDate" class="col-sm-3 col-form-label">Doğum Tarihi:</label>
+                        <div class="col-sm-9">
+                            <input id="BirthDate" asp-for="BirthDate" type="date" class="form-control" required />
+                            <span asp-validation-for="BirthDate" class="text-danger"></span>
+                            <span id="birth-date-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="BirthPlace" class="col-sm-3 col-form-label">Doğum Yeri:</label>
+                        <div class="col-sm-9">
+                            <input id="BirthPlace" asp-for="BirthPlace" class="form-control" required />
+                            <span asp-validation-for="BirthPlace" class="text-danger"></span>
+                            <span id="birth-place-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="Gender" class="col-sm-3 col-form-label">Cinsiyet:</label>
+                        <div class="col-sm-9">
+                                <select id="Gender" asp-for="Gender" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Gender>()" class="form-control" required>
+                                <option value="">Cinsiyet Seçiniz</option>
+                            </select>
+                            <span asp-validation-for="Gender" class="text-danger"></span>
+                            <span id="gender-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="CitizenId" class="col-sm-3 col-form-label">Kimlik Numarası:</label>
+                        <div class="col-sm-9">
+                            <input id="CitizenId" asp-for="CitizenId" class="form-control" required />
+                            <span asp-validation-for="CitizenId" class="text-danger"></span>
+                            <span id="citizen-id-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="StartDate" class="col-sm-3 col-form-label">İşe Başlama Tarihi:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="StartDate" class="form-control" required />
+                            <span asp-validation-for="StartDate" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="PersonalEmail" class="col-sm-3 col-form-label">Kişisel Email:</label>
+                        <div class="col-sm-9">
+                            <input id="PersonalEmail" asp-for="PersonalEmail" type="email" class="form-control" required />
+                            <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+                            <span id="personal-email-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="Password" class="col-sm-3 col-form-label">Şifre:</label>
+                        <div class="col-sm-9">
+                            <input asp-for="Password" type="password" class="form-control" required />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                            <span id="password-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label asp-for="Address" class="col-sm-3 col-form-label">Adres:</label>
+                                <div class="col-sm-9">
+                                    <textarea id="Address" asp-for="Address" class="form-control" rows="5" required></textarea>
+                                    <span asp-validation-for="Address" class="text-danger"></span>
+                                    <span id="address-error-message" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group row">
+                                <label asp-for="PersonalPhoneNumber" class="col-sm-3 col-form-label">Cep Telefonu:</label>
+                                <div class="col-sm-9">
+                                    <input asp-for="PersonalPhoneNumber" class="form-control" placeholder="XXX XXX XXXX" pattern="\d{3} \d{3} \d{4}" title="Lütfen bu formata uygun yazınız XXX XXX XXXX (örn: 555 555 5555)" required />
+                                    <span asp-validation-for="PersonalPhoneNumber" class="text-danger"></span>
+                                    <span id="personal-phone-error-message" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="Department" class="col-sm-3 col-form-label">Departmanı:</label>
+                        <div class="col-sm-9">
+                            <select asp-for="Department" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Department>()" class="form-control" required>
+                                <option value="">Select Department</option>
+                            </select>
+                            <span asp-validation-for="Department" class="text-danger"></span>
+                            <span id="department-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Picture_" class="col-sm-3 col-form-label">Resim:</label>
+                            <div class="col-sm-9">
+                                <input id="Picture_" asp-for="Picture_" type="file" class="form-control" accept=".jpg, .jpeg, .png, .gif" required />
+                                <span asp-validation-for="Picture_" class="text-danger"></span>
+                                <span id="picture-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label asp-for="SelectedRole" class="col-sm-3 col-form-label">Rolü:</label>
+                        <div class="col-sm-9">
+                            <select asp-for="SelectedRole" class="form-control" required>
+                                <option value="">Select Role</option>
+                                <option value="companymanager">Şirket Yöneticisi</option>
+                                <option value="employee">Çalışan</option>
+                            </select>
+                            <span asp-validation-for="SelectedRole" class="text-danger"></span>
+                            <span id="role-error-message" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                    <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+@* <div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div> *@
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Ad alanı kontrolü
+        document.getElementById('FirstName').addEventListener('blur', function () {
+            var inputValueFirstName = this.value.trim();
+            if (!inputValueFirstName) {
+                document.getElementById('first-name-error-message').innerText = "Ad alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('first-name-error-message').innerText = "";
+                this.value = inputValueFirstName.charAt(0).toUpperCase() + inputValueFirstName.slice(1); // İlk harfi büyük yap
+            }
+        });
+
+        // Soyad alanı kontrolü
+        document.getElementById('LastName').addEventListener('blur', function () {
+            var inputValueLastName = this.value.trim();
+            if (!inputValueLastName) {
+                document.getElementById('last-name-error-message').innerText = "Soyad alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('last-name-error-message').innerText = "";
+                this.value = inputValueLastName.charAt(0).toUpperCase() + inputValueLastName.slice(1);
+            }
+        });
+
+        // Cinsiyet alanı kontrolü
+        document.getElementById('Gender').addEventListener('change', function () {
+            var selectedValue = this.value;
+            if (!selectedValue) {
+                document.getElementById('gender-error-message').innerText = "Cinsiyet seçmek zorunludur.";
+            } else {
+                document.getElementById('gender-error-message').innerText = "";
+            }
+        });
+
+        // Doğum Tarihi alanı kontrolü
+        document.getElementById('BirthDate').addEventListener('blur', function () {
+            var inputValueBirthDate = this.value.trim();
+            if (!inputValueBirthDate) {
+                document.getElementById('birth-date-error-message').innerText = "Doğum Tarihi alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('birth-date-error-message').innerText = "";
+            }
+        });
+
+        // Doğum Yeri alanı kontrolü
+        document.getElementById('BirthPlace').addEventListener('blur', function () {
+            var inputValueBirthPlace = this.value.trim();
+            if (!inputValueBirthPlace) {
+                document.getElementById('birth-place-error-message').innerText = "Doğum Yeri alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('birth-place-error-message').innerText = "";
+            }
+        });
+
+        // TC Kimlik Numarası alanı kontrolü
+        document.getElementById('CitizenId').addEventListener('blur', function () {
+            var inputValueCitizenId = this.value.trim();
+            if (!inputValueCitizenId || inputValueCitizenId.length !== 11) {
+                document.getElementById('citizen-id-error-message').innerText = "TC kimlik numarası 11 karakter olmalıdır.";
+            } else {
+                document.getElementById('citizen-id-error-message').innerText = "";
+            }
+        });
+
+        // Kişisel Email alanı kontrolü
+        document.getElementById('PersonalEmail').addEventListener('blur', function () {
+            var inputValuePersonalEmail = this.value.trim();
+            if (!inputValuePersonalEmail) {
+                document.getElementById('personal-email-error-message').innerText = "Kişisel Email alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('personal-email-error-message').innerText = "";
+            }
+        });
+
+        // Adres alanı kontrolü
+        document.getElementById('Address').addEventListener('blur', function () {
+            var inputValueAddress = this.value.trim();
+            if (!inputValueAddress) {
+                document.getElementById('address-error-message').innerText = "Adres alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('address-error-message').innerText = "";
+            }
+        });
+
+        // Cep Telefonu alanı kontrolü
+        document.getElementById('PersonalPhoneNumber').addEventListener('blur', function () {
+            var inputValuePersonalPhone = this.value.trim();
+            if (!inputValuePersonalPhone || !/^\d{3} \d{3} \d{4}$/.test(inputValuePersonalPhone)) {
+                document.getElementById('personal-phone-error-message').innerText = "Geçerli bir cep telefonu numarası giriniz (örn: 555 555 5555).";
+            } else {
+                document.getElementById('personal-phone-error-message').innerText = "";
+            }
+        });
+
+        // Şifre alanı kontrolü
+        document.getElementById('Password').addEventListener('blur', function () {
+            var inputValuePassword = this.value.trim();
+            if (!inputValuePassword) {
+                document.getElementById('password-error-message').innerText = "Şifre alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('password-error-message').innerText = "";
+            }
+        });
+
+        // Departman alanı kontrolü
+        document.getElementById('Department').addEventListener('change', function () {
+            var selectedValue = this.value;
+            if (!selectedValue) {
+                document.getElementById('department-error-message').innerText = "Departman seçmek zorunludur.";
+            } else {
+                document.getElementById('department-error-message').innerText = "";
+            }
+        });
+
+        // Rol alanı kontrolü
+        document.getElementById('SelectedRole').addEventListener('change', function () {
+            var selectedValue = this.value;
+            if (!selectedValue) {
+                document.getElementById('role-error-message').innerText = "Rol seçmek zorunludur.";
+            } else {
+                document.getElementById('role-error-message').innerText = "";
+            }
+        });
+
+        // Form gönderimini kontrol etmek için
+        function validateInput() {
+            var pictureInput = document.getElementById('Picture_');
+            var inputValueFirstName = document.getElementById('FirstName').value.trim();
+            var inputValueLastName = document.getElementById('LastName').value.trim();
+            var genderSelect = document.getElementById('Gender');
+            var inputValueBirthDate = document.getElementById('BirthDate').value.trim();
+            var inputValueBirthPlace = document.getElementById('BirthPlace').value.trim();
+            var inputValueCitizenId = document.getElementById('CitizenId').value.trim();
+            var inputValueAddress = document.getElementById('Address').value.trim();
+            var inputValuePersonalPhone = document.getElementById('PersonalPhoneNumber').value.trim();
+            var inputValuePassword = document.getElementById('Password').value.trim();
+            var departmentSelect = document.getElementById('Department');
+            var roleSelect = document.getElementById('SelectedRole');
+
+            if (pictureInput.files.length === 0) {
+                document.getElementById('picture-error-message').innerText = "Çalışan resmi yükleyiniz.";
+                return false;
+            }
+            if (!inputValueFirstName) {
+                document.getElementById('first-name-error-message').innerText = "Ad alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!inputValueLastName) {
+                document.getElementById('last-name-error-message').innerText = "Soyad alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!genderSelect.value) {
+                document.getElementById('gender-error-message').innerText = "Cinsiyet seçmek zorunludur.";
+                return false;
+            }
+            if (!inputValueBirthDate) {
+                document.getElementById('birth-date-error-message').innerText = "Doğum Tarihi alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!inputValueBirthPlace) {
+                document.getElementById('birth-place-error-message').innerText = "Doğum Yeri alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!inputValueCitizenId || inputValueCitizenId.length !== 11) {
+                document.getElementById('citizen-id-error-message').innerText = "TC kimlik numarası 11 karakter olmalıdır.";
+                return false;
+            }
+            if (!inputValueAddress) {
+                document.getElementById('address-error-message').innerText = "Adres alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!inputValuePersonalPhone || !/^\d{3} \d{3} \d{4}$/.test(inputValuePersonalPhone)) {
+                document.getElementById('personal-phone-error-message').innerText = "Geçerli bir cep telefonu numarası giriniz (örn: 555 555 5555).";
+                return false;
+            }
+            if (!inputValuePassword) {
+                document.getElementById('password-error-message').innerText = "Şifre alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!departmentSelect.value) {
+                document.getElementById('department-error-message').innerText = "Departman seçmek zorunludur.";
+                return false;
+            }
+            if (!roleSelect.value) {
+                document.getElementById('role-error-message').innerText = "Rol seçmek zorunludur.";
+                return false;
+            }
+            return true;
+        }
+    });
+</script>

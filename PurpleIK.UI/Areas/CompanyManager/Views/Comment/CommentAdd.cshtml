@@ -1,0 +1,108 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.CommentVM.CommentAddVM
+
+@{
+    ViewData["Title"] = "CommentAdd";
+}
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Yorum Ekleme Sayfası</h4>
+            <hr />
+            <form class="forms-sample" asp-action="CommentAdd" method="post" enctype="multipart/form-data" onsubmit="return validateInput()">            
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="PersonId" />
+                <input type="hidden" asp-for="Title" />
+                <div class="form-group">
+                    <label asp-for="_Photo" class="control-label">Resim:</label>
+                    <input id="Photo" asp-for="_Photo" type="file" class="form-control" accept=".jpg, .jpeg, .png" required />
+                    <span asp-validation-for="_Photo" class="text-danger"></span>
+                    <span id="picture-error-message" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Summary" class="control-label">Özet:</label>
+                    <textarea id="Summary" asp-for="Summary" class="form-control" rows="5" required></textarea>
+                    <span asp-validation-for="Summary" class="text-danger"></span>
+                    <span id="Summary-error-message" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CommentText" class="control-label">Yorum:</label>
+                    <textarea id="CommentText" asp-for="CommentText" class="form-control" rows="5" required></textarea>
+                    <span asp-validation-for="CommentText" class="text-danger"></span>
+                    <span id="address-error-message" class="text-danger"></span>
+                </div>
+                      
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@* <div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div> *@
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Başlık alanı kontrolü
+        document.getElementById('Title').addEventListener('blur', function () {
+            var inputValueFirstName = this.value.trim();
+            if (!inputValueFirstName) {
+                document.getElementById('Title-error-message').innerText = "Başlık alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('Title-error-message').innerText = "";                
+            }
+        });
+
+        // Yorum alanı kontrolü
+        document.getElementById('CommentText').addEventListener('blur', function () {
+            var inputValueLastName = this.value.trim();
+            if (!inputValueLastName) {
+                document.getElementById('CommentText-error-message').innerText = "Yorum alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('CommentText-error-message').innerText = "";                
+            }
+        });
+
+        // Özet alanı kontrolü
+        document.getElementById('Summary').addEventListener('blur', function () {
+            var inputValueLastName = this.value.trim();
+            if (!inputValueLastName) {
+                document.getElementById('Summary-error-message').innerText = "Özet alanı boş bırakılamaz.";
+            } else {
+                document.getElementById('Summary-error-message').innerText = "";
+            }
+        });;
+      
+
+        // Form gönderimini kontrol etmek için
+        function validateInput() {
+            var pictureInput = document.getElementById('Photo');
+            var inputValueFirstName = document.getElementById('Title').value.trim();
+            var inputValueLastName = document.getElementById('CommentText').value.trim();
+            var inputValueBirthDate = document.getElementById('Summary').value.trim();
+            var inputValueBirthPlace = document.getElementById('CompanyManagerName').value.trim();
+            var departmentSelect = document.getElementById('Department');
+
+            if (pictureInput.files.length === 0) {
+                document.getElementById('picture-error-message').innerText = "Çalışan resmi yükleyiniz.";
+                return false;
+            }
+            if (!inputValueTitle) {
+                document.getElementById('Title-error-message').innerText = "Ad alanı boş bırakılamaz.";
+                return false;
+            }
+            if (!inputValueCommentText) {
+                document.getElementById('CommentText-error-message').innerText = "Soyad alanı boş bırakılamaz.";
+                return false;
+            }           
+            if (!inputValueSummary) {
+                document.getElementById('Summary-error-message').innerText = "Özet alanı boş bırakılamaz.";
+                return false;
+            }
+            return true;
+        }
+    });
+</script>

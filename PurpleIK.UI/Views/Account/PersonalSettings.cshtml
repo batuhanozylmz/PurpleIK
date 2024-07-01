@@ -1,0 +1,181 @@
+﻿@model PurpleIK.UI.Models.VM.AccountVM.PersonalSettingsVM
+
+@{
+    ViewData["Title"] = "PersonalSettings";
+    Layout = ViewBag.Layout;
+}
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<!-- ListEmployee içeriği -->
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Ayarlar Sayfası</h4>
+            <hr />
+            <form asp-action="PersonalSettings" method="post" enctype="multipart/form-data" class="form-sample">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <p class="card-description"> Personel Bilgisi </p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <img id="image-preview" src="@Model.PictureBase64" style="max-width: 150px; max-height: 150px;" onmouseover="zoomIn()" onmouseout="zoomOut()" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label" asp-for="Picture_">Resim Seç:</label>
+                            <div class="col-sm-9">
+                                <input id="Picture_" asp-for="Picture_" value="@Model.Picture_" type="file" class="form-control" onchange="previewImage(this)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="FirstName" class="col-sm-3 col-form-label">Ad:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="FirstName" class="form-control" />
+                                <span asp-validation-for="FirstName" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="PersonalEmail" class="col-sm-3 col-form-label">Kişisel Email:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="PersonalEmail" type="email" class="form-control" />
+                                <span asp-validation-for="PersonalEmail" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="LastName" class="col-sm-3 col-form-label">Soyad:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="LastName" class="form-control" />
+                            </div>
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="CompanyEmail" class="col-sm-3 col-form-label">Şirket Email:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="CompanyEmail" id="CompanyEmail" type="email" class="form-control" readonly />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Department" class="col-sm-3 col-form-label">Departmanı:</label>
+                            <div class="col-sm-9">
+                                <select asp-for="Department" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Department>()" class="form-control" required>
+                                    <option value="">Department Seçiniz..</option>
+                                </select>
+                                <span asp-validation-for="Department" class="text-danger"></span>
+                                <span id="department-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Address" class="col-sm-3 col-form-label">Adres:</label>
+                            <div class="col-sm-9">
+                                <textarea asp-for="Address" class="form-control" rows="5"></textarea>
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="PersonalPhoneNumber" class="col-sm-3 col-form-label">Cep Telefonu:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="PersonalPhoneNumber" class="form-control" placeholder="XXX XXX XXXX" pattern="\d{3} \d{3} \d{4}" title="Lütfen bu formata uygun yazınız XXX XXX XXXX (örn: 555 555 5555)" required />
+                                <span asp-validation-for="PersonalPhoneNumber" class="text-danger"></span>
+                                <span id="personal-phone-error-message" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label asp-for="Password" class="col-sm-3 col-form-label">Şifre:</label>
+                            <div class="col-sm-9">
+                                <input asp-for="Password" class="form-control" />
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" asp-for="CompanyName" />
+                <input type="hidden" asp-for="Gender" />
+                <input type="hidden" asp-for="SelectedRole" />
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="BirthDate" />
+                <input type="hidden" asp-for="BirthPlace" />
+                <input type="hidden" asp-for="CitizenId" />
+                <input type="hidden" asp-for="StartDate" />
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <form asp-action="ChangeEmployeeStatus" asp-route-id="@Model.Id" asp-route-newStatus="DeActive" method="post">
+                    <button type="submit" class="btn btn-gradient-warning btn-fw">Pasifleştir</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+
+        function zoomIn() {
+            $('#image-preview').css('transform', 'scale(2)');
+        }
+
+        function zoomOut() {
+            $('#image-preview').css('transform', 'scale(1)');
+        }
+    </script>
+}
+

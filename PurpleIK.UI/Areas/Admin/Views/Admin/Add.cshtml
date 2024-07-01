@@ -1,0 +1,73 @@
+﻿@model PurpleIK.UI.Areas.Admin.Models.VM.AdminVM.AdminAddVM
+
+@{
+    ViewData["Title"] = "Add";
+    Layout = "~/Views/Shared/_LoginRegister.cshtml";   
+}
+
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+        <form asp-action="Add" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="AdminName" class="control-label">Admin Adı:</label>
+                <input asp-for="AdminName" class="form-control" />
+                <span asp-validation-for="AdminName" class="text-danger"></span>
+            </div>     
+            
+            <div class="form-group">
+                <label asp-for="AdminLastName" class="control-label">Admin Soyadı:</label>
+                <input asp-for="AdminLastName" class="form-control" />
+                <span asp-validation-for="AdminLastName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email:</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Password" class="control-label">Şifre:</label>
+                <input asp-for="Password" class="form-control" type="password" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Hesap Oluştur" class="btn btn-primary" />
+            </div>            
+        </form>
+
+@section Scripts {
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}
+

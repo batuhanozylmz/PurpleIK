@@ -1,0 +1,108 @@
+﻿@model PurpleIK.UI.Models.VM.AccountVM.CompanyRegisterVM
+
+@{
+    ViewData["Title"] = "CompanyRegister";
+    Layout = "~/Views/Shared/_LoginRegister.cshtml";
+}
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<form asp-action="CompanyRegister" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="PlanId" />
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="CompanyName" class="control-label">Şirket Adı:</label>
+                <input asp-for="CompanyName" id="CompanyName" class="form-control" required />
+                <span asp-validation-for="CompanyName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="PhoneNumber" class="control-label">Telefon Numarası:</label>
+                <input asp-for="PhoneNumber" class="form-control" placeholder="XXX XXX XXXX" pattern="\d{3} \d{3} \d{4}" title="Lütfen bu formata uygun yazınız XXX XXX XXXX (örn: 555 555 5555)" required />
+                <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SuperManagerFirstName">Yetkili Yönetici Adı:</label>
+                <input asp-for="SuperManagerFirstName" id="SuperManagerFirstName" class="form-control" required />
+                <span asp-validation-for="SuperManagerFirstName" class="text-danger"></span>
+            </div>
+            
+
+            <div class="form-group">
+                <label asp-for="CompanyEmail" class="control-label">Şirket Email:</label>
+                <input asp-for="CompanyEmail" class="form-control" type="email" placeholder="Onay için email" required />
+                <span asp-validation-for="CompanyEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SuperManagerEmail">Yönetici Email:</label>
+                <input asp-for="SuperManagerEmail" value="ad.soyad@şirketadi.com" id="SuperManagerEmail" class="form-control" required readonly />
+                <span asp-validation-for="SuperManagerEmail" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Adres:</label>
+                <textarea asp-for="Address" class="form-control" rows="8" required></textarea>
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            
+
+            <div class="form-group">
+                <label asp-for="SuperManagerLastName">Yetkili Yönetici Soyadı:</label>
+                <input asp-for="SuperManagerLastName" id="SuperManagerLastName" class="form-control" required />
+                <span asp-validation-for="SuperManagerLastName" class="text-danger"></span>
+            </div>
+           
+
+            <div class="form-group">
+                <label asp-for="NumberOfEmployees" class="control-label">Çalışan Sayısı:</label>
+                <input asp-for="NumberOfEmployees" class="form-control" required />
+                <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SuperManagerPassword">Yonetici Giriş Şifresi:</label>
+                <input asp-for="SuperManagerPassword" type="password" class="form-control" required />
+                <span asp-validation-for="SuperManagerPassword" class="text-danger"></span>
+            </div>            
+        </div>
+        <div class="form-group mt-3" align="center">
+            <input type="submit" value="Kayıt Ol" class="btn btn-primary" />
+        </div>
+        <div class="text-center mt-4 font-weight-light">
+            Zaten hesabınız var mı? <a href="@Url.Action("Login", "Account")" class="text-primary">Giriş Yapın</a>
+        </div>
+    </div>
+</form>
+@section Scripts {
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}

@@ -1,0 +1,83 @@
+﻿@using PurpleIK.UI.Areas.Admin.Models.VM.AdminVM
+@model CompanyEditVM
+
+@{
+    ViewData["Title"] = "CompanyEdit";
+    // Layout = "~/Areas/Admin/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Admin Bilgileri Düzenleme Sayfaları</h4>
+            <hr />
+            <form asp-action="CompanyEdit" asp-controller="Admin" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id" class="form-control" />
+    </div>
+    <div class="form-group">
+                    <label asp-for="_Logo">Resim Yükle</label>
+                    <input asp-for="_Logo" class="form-control" type="file" />
+                    <span asp-validation-for="_Logo" class="text-danger"></span>
+                </div>
+    @* <div class="form-group">
+        <label asp-for="Logo_">Resim Seç:</label>
+        <input id="Logo_" asp-for="Logo_" value="@Model.Logo_" type="file" class="form-control" onchange="previewImage(this)" />
+    </div> *@
+    <div class="form-group">
+        <label asp-for="CompanyName" class="form-label">CompanyName</label>
+                <input asp-for="CompanyName" class="form-control" placeholder="Şirket Adı Giriniz" required />
+        <span asp-validation-for="CompanyName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MersisNo" class="form-label">MersisNo</label>
+        <input asp-for="MersisNo" class="form-control" rows="3" placeholder="Mersis No Giriniz"></input>
+        <span asp-validation-for="MersisNo" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TaxNo" class="form-label">TaxNo</label>
+                <input asp-for="TaxNo" type="email" class="form-control" placeholder="Tax No Giriniz" />
+        <span asp-validation-for="TaxNo" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label">Telefon Numarası:</label>
+        <input asp-for="PhoneNumber" class="form-control" placeholder="XXX XXX XXXX" pattern="\d{3} \d{3} \d{4}" title="Lütfen bu formata uygun yazınız XXX XXX XXXX (örn: 555 555 5555)" required />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="form-label">Adres</label>
+        <textarea asp-for="Address" class="form-control" rows="3" placeholder="Şirket Adresini Giriniz"></textarea>
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div> <div class="form-group">
+        <label asp-for="CompanyEmail" class="form-label">Şirket E-Posta Adresi</label>
+        <input asp-for="CompanyEmail" class="form-control" placeholder="example@example.com" required />
+        <span asp-validation-for="CompanyEmail" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+                <label asp-for="CompanyTypes" class="control-label">Şirket Tipi:</label>
+                <select asp-for="CompanyTypes" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.CompanyTypes>()" class="form-control">
+                  <option value="">Şirket Tipi Seçin</option> 
+                </select>
+                <span asp-validation-for="CompanyTypes" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+             <label asp-for="Status" class="control-label">Şirket Tipi:</label>
+                <select asp-for="Status" asp-items="Html.GetEnumSelectList<PurpleIK.Core.Enums.Status>()" class="form-control">
+                 <option value="">Şirket Durumunu Giriniz</option>
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <br />
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
+        </div>
+    </div>
+</div>
+@* <div>
+    <a href="/AdminA/Admin/GetAllActiveCompanies" class="btn btn-secondary">Listeye Geri Dön</a>
+</div>
+ *@

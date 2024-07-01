@@ -1,0 +1,22 @@
+﻿@using PurpleIK.UI.Areas.Employee.Models.VM.DebitEmployeeVM
+@model RejectVM
+@{
+    ViewData["Title"] = "DeActiveDebit";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Zimmet Reddetme Sayfası</h4>
+            <hr />
+            <form asp-action="DeActiveDebit" method="post">
+                <input type="hidden" asp-for="Id" />
+                <div class="form-group">
+                    <label for="Reject">Reddetme Nedeni:</label>
+                    <textarea class="form-control" id="Reject" name="Reject" rows="4"></textarea>
+                </div>
+                <button type="submit" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend" align="center"></i>Kaydet</button>
+            </form>
+        </div>
+    </div>
+</div>

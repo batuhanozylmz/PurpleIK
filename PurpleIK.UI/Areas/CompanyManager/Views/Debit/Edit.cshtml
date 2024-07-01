@@ -1,0 +1,78 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.DebitVM.DebitEditVM
+
+@{
+    ViewData["Title"] = "Edit";
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Zimmet Düzenleme Sayfası</h4>
+            <hr />
+            <table class="table table-striped">
+                <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="DebitEditItem.Id" />
+                    <div class="form-group">
+                        <label asp-for="DebitEditItem.ProductName">Zimmet Adı</label>
+                        <input asp-for=DebitEditItem.ProductName class="form-control" />
+                        <span asp-validation-for="DebitEditItem.ProductName" class="text-danger"></span>
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DebitEditItem.ReceiptDate">Zimmet Teslim Tarihi</label>
+                        <input asp-for="DebitEditItem.ReceiptDate" class="form-control" type="date" />
+                        <span asp-validation-for="DebitEditItem.ReceiptDate" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <a href="@Url.Action("GetDocument", "Debit", new { id = Model.DebitEditItem.Id, layoutName = "Edit" })" class="btn btn-primary">Mevcut Pdf Dosyası Görüntüle</a>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="DebitEditItem.DebitFormFile">PDF Dosyası Yükle</label>
+                        <input asp-for="DebitEditItem.DebitFormFile" class="form-control" type="file" accept=".pdf" />
+                        <span asp-validation-for="DebitEditItem.DebitFormFile" class="text-danger"></span>
+                    </div>
+                    <input type="hidden" asp-for="DebitEditItem.ManagerId" />
+                    <div class="form-group">
+                        <label asp-for="DebitEditItem.PersonId">Personel</label>
+                        @if (Model != null && Model.Persons != null && Model.Persons.Any())
+                        {
+                            <select asp-for="DebitEditItem.PersonId" class="form-control">
+                                <option value="">Çalışan Seç</option>
+                                @foreach (var person in Model.Persons)
+                                {
+                                    <option value="@person.Id">@person.FirstName @person.LastName - @person.CompanyEmail</option>
+                                }
+                            </select>
+                        }
+                        else
+                        {
+                            <span class="text-danger">Çalışan bulunamadı.</span>
+                        }
+                        <span asp-validation-for="DebitEditItem.PersonId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Kaydet</button>
+                </div>
+                </form>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

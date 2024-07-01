@@ -1,0 +1,539 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.UI\\PurpleIK.UI.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj",
+        "projectName": "PurpleIK.Context",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Proxies": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj",
+        "projectName": "PurpleIK.Core",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj",
+        "projectName": "PurpleIK.Entities",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj",
+        "projectName": "PurpleIK.Mapping",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj",
+        "projectName": "PurpleIK.Repositories",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\PurpleIK.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\PurpleIK.Services.csproj",
+        "projectName": "PurpleIK.Services",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\PurpleIK.Services.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.UI\\PurpleIK.UI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.UI\\PurpleIK.UI.csproj",
+        "projectName": "PurpleIK.UI",
+        "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.UI\\PurpleIK.UI.csproj",
+        "packagesPath": "C:\\Users\\merve\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.UI\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\merve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Context\\PurpleIK.Context.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Core\\PurpleIK.Core.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Entities\\PurpleIK.Entities.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Mapping\\PurpleIK.Mapping.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Repositories\\PurpleIK.Repositories.csproj"
+              },
+              "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\PurpleIK.Services.csproj": {
+                "projectPath": "C:\\Users\\merve\\Desktop\\.Net Eğitimi\\PurpleIK\\PurpleIK\\PurpleIK.Services\\PurpleIK.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "HtmlRenderer.PdfSharp": {
+              "target": "Package",
+              "version": "[1.5.0.6, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.17, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[7.0.12, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

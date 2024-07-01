@@ -1,0 +1,46 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.CompanyMembershipVM.MembershipVM
+
+@{
+    ViewData["Title"] = "Membership"; 
+    Layout = "~/Views/Shared/_CompanyLayoutMembership.cshtml";
+}
+
+<form asp-action="Membership" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="PlanId" />
+    <div class="form-group">
+        <label asp-for="Name">Üyelik Adı:</label>
+        <input asp-for="Name" value="@Model.Name" class="form-control" required readonly />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Price">Üyelik Ücreti:</label>
+        <input asp-for="Price" value="@Model.Price" class="form-control" required readonly />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NumberOfEmployees">Maksimum Çalışan Sayısı:</label>
+        <input asp-for="NumberOfEmployees" value="@Model.NumberOfEmployees" class="form-control" required readonly />
+        <span asp-validation-for="NumberOfEmployees" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SubscriptionPeriod">Üyelik Tipi:</label>
+        <input asp-for="SubscriptionPeriod" value="@Model.SubscriptionPeriod" class="form-control" required readonly />
+        <span asp-validation-for="SubscriptionPeriod" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Duration">Süre:</label>
+        <input asp-for="Duration"  class="form-control" required />
+        <span asp-validation-for="Duration" class="text-danger"></span>
+    </div>     
+    <div 
+        class="form-group mt-3">
+        <input type="submit" value="Üyeliği Kaydet" class="btn btn-block btn-lg btn-gradient-primary mt-4" />
+    </div>
+    <div>
+        <button type="button" class="btn btn-block btn-lg btn-gradient-primary mt-4" onclick="window.location.href='@Url.Action("MembershipList", "CompanyMembership", new { area = "CompanyManager" })'">Listeye Dön</button>
+    </div>
+
+   
+</form>

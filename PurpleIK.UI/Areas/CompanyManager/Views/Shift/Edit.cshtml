@@ -1,0 +1,88 @@
+﻿@model PurpleIK.UI.Areas.CompanyManager.Models.VM.ShiftVM.ShiftEditVM
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form asp-action="Edit" method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input asp-for="ShiftEditItem.Id" type="hidden" class="form-control" />
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.Name" class="control-label">Vardiya Adı</label>
+                    <input asp-for="ShiftEditItem.Name" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.ShiftDate" class="control-label">Vardiya Tarihi</label>
+                    <input asp-for="ShiftEditItem.ShiftDate" type="date" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.ShiftDate" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.StartTime" class="control-label">Başlangıç Saati</label>
+                    <input asp-for="ShiftEditItem.StartTime" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.StartTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.EndTime" class="control-label">Bitiş Saati</label>
+                    <input asp-for="ShiftEditItem.EndTime" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.EndTime" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.BreakTimeOneStart" class="control-label">Birinci Mola Başlangıç Saati</label>
+                    <input asp-for="ShiftEditItem.BreakTimeOneStart" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.BreakTimeOneStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.BreakTimeOneEnd" class="control-label">Birinci Mola Bitiş Saati</label>
+                    <input asp-for="ShiftEditItem.BreakTimeOneEnd" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.BreakTimeOneEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.BreakTimeSecondStart" class="control-label">İkinci Mola Başlangıç Saati</label>
+                    <input asp-for="ShiftEditItem.BreakTimeSecondStart" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.BreakTimeSecondStart" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ShiftEditItem.BreakTimeSecondEnd" class="control-label">İkinci Mola Bitiş Saati</label>
+                    <input asp-for="ShiftEditItem.BreakTimeSecondEnd" type="time" class="form-control" />
+                    <span asp-validation-for="ShiftEditItem.BreakTimeSecondEnd" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-gradient-primary btn-icon-text">
+                        <i class="mdi mdi-file-check btn-icon-prepend"></i> Kaydet
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}

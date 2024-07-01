@@ -1,0 +1,57 @@
+﻿@model IEnumerable<PurpleIK.UI.Areas.Admin.Models.VM.AdminVM.CompanyListVM>
+
+
+@{
+    ViewData["Title"] = "GetAllApprovalCompanies";
+    // Layout = "~/Areas/Admin/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Onay Bekleyen Şirketler Tablosu</h4>
+            <hr />
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Şirket Adı</th>
+                        <th>Email</th>
+                        <th>Durum</th>            
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>                
+                            <td>@item.CompanyName</td>
+                            <td>@item.Email</td>
+                            <td>@item.StatusText</td>                
+                            <td>
+                                   @*  <div>
+                                        <a asp-area="Admin" asp-controller="Admin" asp-action="ApproveMembership" asp-route-companyId="@item.CompanyId" class="btn btn-primary">Onayla</a>
+                                    </div> *@
+                                  <form asp-action="ApproveMembership" method="post">
+                                      <input type="hidden" name="companyId" value="@item.CompanyId" />
+                                      <button type="submit" class="btn btn-primary">Onayla</button>
+                                  </form>
+                            </td> 
+                            <td>
+                                   @*  <div>
+                                        <a asp-area="Admin" asp-controller="Admin" asp-action="RejectMembership" asp-route-companyId="@item.CompanyId" class="btn btn-danger">Reddet</a>
+                                    </div> *@
+                                  <form asp-action="RejectMembership" method="post">
+                                      <input type="hidden" name="companyId" value="@item.CompanyId" />
+                                      <button type="submit" class="btn btn-danger">Reddet</button>
+                                  </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@* <div>
+    <a href="/Admin/Admin/Index" class="btn btn-secondary">Anasayfaya Dön</a>
+</div> *@

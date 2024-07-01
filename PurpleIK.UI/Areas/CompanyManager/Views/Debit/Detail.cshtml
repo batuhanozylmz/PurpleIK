@@ -1,0 +1,22 @@
+﻿@using PurpleIK.UI.Areas.CompanyManager.Models.VM.DebitVM
+@model DebitIndexVM
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<p><strong>Product Name:</strong> @Model.ProductName</p>
+<p><strong>Receipt Date:</strong> @Model.ReceiptDate</p>
+<p><strong>Delivery Date:</strong> @(Model.DeliveryDate.HasValue ? Model.DeliveryDate.Value.ToString("yyyy-MM-dd") : "N/A")</p>
+<!-- Diğer detayları buraya ekleyebilirsiniz -->
+<hr />
+@if (Model.DebitForm != null && Model.DebitForm.Length > 0)
+{
+    <img src="data:image;base64,@(Convert.ToBase64String(Model.DebitForm))" alt="Debit Form" class="img-fluid" />
+}
+else
+{
+    <p>No debit form available.</p>
+}
+
+<a asp-action="DownloadPdf" asp-route-id="@Model.Id" class="btn btn-primary">Download PDF</a>

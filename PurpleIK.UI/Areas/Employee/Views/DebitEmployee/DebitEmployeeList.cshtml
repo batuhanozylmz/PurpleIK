@@ -1,0 +1,131 @@
+﻿@using PurpleIK.Core.Enums
+@using PurpleIK.UI.Areas.Employee.Models.VM.DebitEmployeeVM
+
+@model DebitEmployeeIndexVM
+
+@{
+    ViewData["Title"] = "DebitEmployeeList";
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Zimmetlerim Tablosu</h4>
+            <hr />
+            <div class="row">
+                <div class="col-sm-2">
+                    <button class="btn btn-fw btn-gradient-primary filter-button" data-status="all">Tümü</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-fw btn-gradient-success filter-button" data-status="active">Onaylanan</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-fw btn-gradient-danger filter-button" data-status="deactive">Reddedilen</button>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-fw btn-gradient-warning filter-button" data-status="pending">Onay Bekleyen</button>
+                </div>
+            </div>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+
+                        <th>Durum</th>
+                        <th>Zimmetteki Ürün</th>
+                        <th>Teslim Tarihi</th>
+                        <th>İade Tarihi</th>
+                        <th>Yöneticim</th>
+                        <th>Zimmet Formu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var debit in Model.DebitEmployeeItems)
+                    {
+                        <tr class="debit-row @(debit.Status == "Active" ? "active-debit" : (debit.Status == "DeActive" ? "deactive-debit" : "pending-debit"))">
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    @if (debit.Status == "Active")
+                                    {
+                                        <label class="badge badge-gradient-success" style="width: 15px;"> </label>
+                                    }
+                                    else if (debit.Status == "DeActive")
+                                    {
+                                        <label class="badge badge-gradient-danger" style="width: 15px;"> </label>
+                                    }
+                                    else if (debit.Status == "Approval")
+                                    {
+                                        <a asp-action="DeActiveDebit" asp-route-id="@debit.Id" method="get">
+                                            <button type="submit" class="btn btn-gradient-danger btn-sm">Reddet</button>
+                                        </a>
+                                        <a asp-action="ActiveDebit" asp-route-id="@debit.Id" method="get">
+                                            <button type="submit" class="btn btn-gradient-success btn-sm">Onayla</button>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <label class="badge badge-gradient-warning" style="width: 15px;"> </label>
+                                    }
+                                </div>
+                            </td>
+                            <td>@debit.ProductName</td>
+                            <td>@debit.ReceiptDate.ToShortDateString()</td>
+                            <td>@(debit.DeliveryDate.HasValue ? debit.DeliveryDate.Value.ToShortDateString() : " ")</td>
+                            <td>@debit.ManagerName</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <form asp-action="GetDocument" method="get">
+                                        <input type="hidden" name="id" value="@debit.Id" />
+                                        <input type="hidden" name="layoutName" value="DebitEmployeeList" />
+                                        <button type="submit" class="btn btn-sm btn-gradient-info btn-icon-text">
+                                            <i class="mdi mdi-file-pdf btn-icon-prepend"></i>Detay
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $(".filter-button").click(function () {
+                var status = $(this).data("status");
+                if (status === "all") {
+                    $(".debit-row").show();
+                } else {
+                    $(".debit-row").hide();
+                    $(".debit-row." + status + "-debit").show();
+                }
+            });
+        });
+    </script>
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+    </script>
+}

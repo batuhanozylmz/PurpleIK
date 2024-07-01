@@ -1,0 +1,36 @@
+﻿@using PurpleIK.UI.Areas.Employee.Models.VM.DebitEmployeeVM
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Zimmet Detay Sayfası</h4>
+            <hr />
+            @if (Model.DebitEmployeeItems != null && Model.DebitEmployeeItems.Count > 0)
+            {
+                foreach (var debit in Model.DebitEmployeeItems)
+                {
+                    <h4>Product Name: @debit.ProductName</h4>
+                    <p>Receipt Date: @debit.ReceiptDate.ToShortDateString()</p>
+                    <p>Delivery Date: @(debit.DeliveryDate.HasValue ? debit.DeliveryDate.Value.ToShortDateString() : "-")</p>
+
+                    @if (debit.DebitForm != null && debit.DebitForm.Length > 0)
+                    {
+                        <img src="data:image;base64,@(Convert.ToBase64String(debit.DebitForm))" alt="Debit Form" class="img-fluid" />
+                    }
+                    else
+                    {
+                        <p>No debit form available.</p>
+                    }
+                }
+            }
+            else
+            {
+                <p>No details available.</p>
+            }
+        </div>
+    </div>
+</div>

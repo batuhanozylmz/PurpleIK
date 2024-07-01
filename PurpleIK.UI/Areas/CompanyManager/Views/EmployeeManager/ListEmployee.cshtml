@@ -1,0 +1,216 @@
+﻿@{
+    ViewData["Title"] = "ListEmployee";
+}
+@{
+    // TempData'den SuccessMessage veya ErrorMessage anahtarlarını al
+    var successMessage = TempData["SuccessMessage"] as string;
+    var errorMessage = TempData["ErrorMessage"] as string;
+}
+
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+
+<!-- ListEmployee içeriği -->
+@*
+<p>
+    <a asp-action="EmployeeAdd" class="btn btn-primary">Yeni Personel Ekle</a>
+</p> *@
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            @if (!string.IsNullOrEmpty(ViewBag.CompanyName))
+            {
+                <h4 style="font-weight: bold; color: #9a55ff; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 28px; text-align: center;" class="card-title">@ViewBag.CompanyName Çalışanları</h4>
+                <hr />
+            }
+
+                <p class="card-description" align="right">
+                    <a asp-action="EmployeeAdd" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Personele Ekle</a>
+                </p>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Profil Resmi</th>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            @* <th>Şirket Adı</th> *@
+                            <th>Rolü</th>
+                            @*   <th>Cinsiyet</th> *@
+                            @* <th>Doğum Tarihi</th>
+                            <th>Doğum Yeri</th>
+                            <th>Kimlik Numarası</th> *@
+                            <th>İşe Baş. Tarihi</th>
+                            @* <th>Kişisel Email</th>
+                            <th>Adres</th> *@
+                            <th>Tel. Numarası</th>
+                            <th>Departmanı</th>
+                            <th>Detaylar</th>
+                            <th>Düzenle/Sil</th>
+                            <th>Aktif/Pasif</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="mdi mdi-account"></i>
+                                    </a>
+                                    <div id="photoDropdown" class="dropdown-menu dropdown-menu-left navbar-dropdown preview-list" aria-labelledby="messageDropdown" style="width: 200px; height: 200px;">
+                                        <style>
+                                            #photoDropdown.dropdown-menu-left {
+                                                left: auto;
+                                                right: 0;
+                                            }
+
+                                            .img-thumbnail {
+                                                max-width: 100%; /* Resmi 100% genişliğe kadar sığdır */
+                                                max-height: 100%; /* Resmi 100% yüksekliğe kadar sığdır */
+                                            }
+
+                                            .preview-item-content img {
+                                                width: auto; /* Otomatik genişlik */
+                                                height: auto; /* Otomatik yükseklik */
+                                                max-width: 100%; /* Resmi 100% genişliğe kadar sığdır */
+                                                max-height: 100%; /* Resmi 100% yüksekliğe kadar sığdır */
+                                            }
+                                        </style>
+                                        <div class="preview-item-content d-flex align-items-start flex-column justify-content-center photo">
+                                            @if (!string.IsNullOrEmpty(item.Picture))
+                                            {
+                                                <img src="@item.Picture" class="img-thumbnail" alt="Profile Photos" style="width: 100%;height : 100%;" />
+                                            }
+                                        </div>
+                                    </div>
+                                    @* @if (!string.IsNullOrEmpty(item.Picture))
+                                {
+                                <img src="@item.Picture" class="img-thumbnail" alt="Profile Photo" style="max-width: 100px; max-height: 100px;" onmouseover="zoomIn()" onmouseout="zoomOut()" />
+                                } *@
+                                </td>
+
+                                <td>@item.FirstName</td>
+                                <td>@item.LastName</td>
+                                @*  <td>@item.CompanyName</td> *@
+                                <td>
+                                    @{
+                                        if (item.Role == "companymanager")
+                                        {
+                                            <span>Şirket Yöneticisi</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Çalışan</span>
+                                        }
+                                    }
+                                </td>
+                                @* <td>@item.Gender</td> *@
+                                @* <td>@item.BirthDate.ToShortDateString()</td>
+                            <td>@item.BirhtPlace</td>
+                            <td>@item.CitizenId</td> *@
+                                <td>@item.StartDate.ToShortDateString()</td>
+                                @* <td>@item.PersonalEmail</td>
+                            <td>
+                            @if (!string.IsNullOrEmpty(item.Address) && item.Address.Length > 15)
+                            {
+                            <span title="@item.Address">@item.Address.Substring(0, 10)...</span>
+                            }
+                            else
+                            {
+                            @item.Address
+                            }
+                            </td> *@
+                                <td>@item.PersonalPhoneNumber</td>
+                                <td>@item.Department</td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <form asp-action="Detail" method="get" asp-route-id="@item.Id">
+                                            <button type="submit" class="btn btn-sm btn-gradient-primary btn-icon-text">
+                                                <i class="mdi mdi-file-multiple btn-icon-prepend"></i>Detay
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <form asp-action="EmployeeEdit" method="get" asp-route-id="@item.Id">
+                                            <button type="submit" class="btn btn-sm btn-gradient-dark btn-icon-text">
+                                                <i class="mdi
+mdi-tooltip-edit btn-icon-prepend"></i>Düzenle
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        <form asp-action="Delete" method="get" asp-route-id="@item.Id">
+                                            <button type="submit" class="btn btn-sm btn-gradient-danger btn-icon-text">
+                                                <i class="mdi mdi-file-delete btn-icon-prepend"></i>
+                                                Sil
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                        @if (item.Status == "Aktif")
+                                        {
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <form asp-action="ChangeEmployeeStatus" asp-route-id="@item.Id" asp-route-newStatus="DeActive" method="post">
+                                                    <button type="submit" class="btn btn-sm btn-gradient-warning btn-fw">Pasifleştir</button>
+                                                </form>
+                                            </div>
+                                        }
+                                        else
+                                        {
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <form asp-action="ChangeEmployeeStatus" asp-route-id="@item.Id" asp-route-newStatus="Active" method="post">
+                                                    <button type="submit" class="btn btn-sm btn-gradient-success btn-fw">Aktifleştir</button>
+                                                </form>
+                                            </div>
+                                        }
+                                    </div>
+
+                                </td>
+
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script>
+        // Remove success message after 5 seconds
+        setTimeout(function () {
+            $('#successAlert').fadeOut('slow');
+        }, 3000);
+
+        // Remove error message after 5 seconds
+        setTimeout(function () {
+            $('#errorAlert').fadeOut('slow');
+        }, 3000);
+
+        function zoomIn() {
+            $('#image-preview').css('transform', 'scale(2)');
+        }
+
+        function zoomOut() {
+            $('#image-preview').css('transform', 'scale(1)');
+        }
+    </script>
+        }
+

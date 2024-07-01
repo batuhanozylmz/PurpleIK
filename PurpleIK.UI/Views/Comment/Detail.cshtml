@@ -1,0 +1,50 @@
+﻿@model PurpleIK.UI.Models.VM.CommentVM.CommentDetailVM
+
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_PagesLayout.cshtml";
+}
+<div class="container-fluid appointment py-5" style="background: #9a55ff;">
+    <div class="container py-5">
+        <div class="row g-7 align-items-center">
+            <div class="col-lg-5">
+                <div class="appointment-time p-5" >
+                    <div class="d-flex align-items-center">
+                        @if (!string.IsNullOrEmpty(Model.LogoPicture))
+                        {
+                            <p class="display-4 mb-4 text-white" style="font-size: 30px;"><img src="@Model.LogoPicture" alt="Logo" style="max-width: 34px; max-height: 34px; margin-right: 10px;" />@Model.CompanyName</p>
+                        }
+                        else
+                        {
+                            <p class="display-4 mb-4 text-white" style="font-size: 30px;">@Model.CompanyName</p>
+                        }
+                      
+                    </div>
+                    <form>
+                        <div class="row gy-3 gx-4">
+                            @if (!string.IsNullOrEmpty(Model.Picture))
+                            {
+                                <div class="team-img rounded-top" style="height: 400px; overflow: hidden;">
+                                    <img src="@Model.Picture" class="img-fluid w-100 rounded-top bg-light" alt="" style="height: 100%; object-fit: cover;" />
+                                </div>
+                            }
+                        </div>
+                    </form>
+                    <br />
+                    <div align="right">
+                        <p class="display-4 mb-4 text-white" style="font-size: 30px;">@Model.CompanyManagerName</p>
+                        <p class="display-4 mb-4 text-white" style="font-size: 20px;">@Model.Department</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="appointment-form p-5">
+                    <p class="display-4 mb-4 text-white" style="font-size: 22px;">@Model.Summary</p>
+                    <div class="d-flex justify-content-between fs-5 text-white">
+                        @Model.CommentText
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

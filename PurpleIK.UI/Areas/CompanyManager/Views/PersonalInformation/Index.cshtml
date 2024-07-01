@@ -1,0 +1,114 @@
+﻿@model IEnumerable<PurpleIK.UI.Areas.CompanyManager.Models.VM.PersonalInformationVM.PersonalInformationIndexVM>
+
+@{
+    ViewData["Title"] = "Index";
+    var successMessage = TempData["SuccessInformationMessage"] as string;
+    var errorMessage = TempData["ErrorInformationMessage"] as string;
+}
+@if (!string.IsNullOrEmpty(successMessage))
+{
+    <div id="successAlert" class="alert alert-success" role="alert">
+        @successMessage
+    </div>
+}
+
+@if (!string.IsNullOrEmpty(errorMessage))
+{
+    <div id="errorAlert" class="alert alert-danger" role="alert">
+        @errorMessage
+    </div>
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 style="font-weight: bold; color: #9a55ff ;font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;font-size: 28px;position: center;" class="card-title" align="center">Özlük Belgesi Tablosu</h4>
+            <hr />
+            <p class="card-description" align="right">
+                <a asp-action="Add" class="btn btn-gradient-primary btn-icon-text"><i class="mdi mdi-file-check btn-icon-prepend"></i>Özlük Belgesi Ekle</a>
+            </p>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Çalışan Resmi</th>
+                        <th>
+                            Çalışan Adı Soyadı
+                        </th>
+                        <th>
+                            Özlük Belgesi Adı
+                        </th>
+                        <th>
+                            Özlük Belgesi Detayı
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="mdi mdi-account"></i>
+                                </a>
+                                <div id="photoDropdown" class="dropdown-menu dropdown-menu-left navbar-dropdown preview-list" aria-labelledby="messageDropdown" style="width: 200px; height: 200px;">
+                                    <style>
+                                        #photoDropdown.dropdown-menu-left {
+                                            left: auto;
+                                            right: 0;
+                                        }
+
+                                        .img-thumbnail {
+                                            max-width: 100%; /* Resmi 100% genişliğe kadar sığdır */
+                                            max-height: 100%; /* Resmi 100% yüksekliğe kadar sığdır */
+                                        }
+
+                                        .preview-item-content img {
+                                            width: auto; /* Otomatik genişlik */
+                                            height: auto; /* Otomatik yükseklik */
+                                            max-width: 100%; /* Resmi 100% genişliğe kadar sığdır */
+                                            max-height: 100%; /* Resmi 100% yüksekliğe kadar sığdır */
+                                        }
+                                    </style>
+                                    <div class="preview-item-content d-flex align-items-start flex-column justify-content-center photo">
+                                        @if (!string.IsNullOrEmpty(item.Picture))
+                                        {
+                                            <img src="@item.Picture" class="img-thumbnail" alt="Profile Photos" style="width: 100%;height : 100%;" />
+                                        }
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Employee)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FormName)
+                            </td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <form asp-action="GetDocument" method="get">
+                                        <input type="hidden" name="id" value="@item.Id" />
+                                        <input type="hidden" name="layoutName" value="Index" />
+                                        <button type="submit" class="btn btn-sm btn-gradient-info btn-icon-text">
+                                            <i class="mdi mdi-file-pdf btn-icon-prepend"></i>Detay
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-gradient-dark btn-icon-text" onclick="window.location.href='@Url.Action("Edit", "PersonalInformation", new { id = item.Id })'"><i class="mdi mdi-tooltip-edit btn-icon-append"></i>Düzenle</button>
+                                <button type="button" class="btn btn-gradient-danger btn-icon-text" onclick="window.location.href='@Url.Action("Remove", "PersonalInformation", new { id = item.Id })'"><i class="mdi mdi-delete-forever btn-icon-prepend"></i>Sil</button>
+                            </td>
+                            @* <td>
+                                @Html.ActionLink("Görüntüle", "Detail", new { id = item.Id })
+                            </td>
+                            <td>
+                                @Html.ActionLink("Düzenle", "Edit", new { id = item.Id }) |
+                                @Html.ActionLink("Sil", "Remove", new { id = item.Id })
+                            </td> *@
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@using PurpleIK.UI.Models.VM.CommentVM
+@model List<CommentListVM>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<!-- Testimonial Start -->
+<div class="container-fluid testimonial py-5">
+    <div class="container py-5">
+        <div class="text-center mx-auto mb-5" style="max-width: 800px;">
+            <p class="fs-4 text-uppercase text-primary">Kullanıcı Hikayeleri</p>
+            <h1 class="display-4 mb-4 text-white">Müşteriler Ne diyor!</h1>
+        </div>
+        <div class="owl-carousel testimonial-carousel">
+            @foreach (var comment in Model)
+            {
+                @if (comment.Status == PurpleIK.Core.Enums.Status.Active)
+                {
+                    <div class="testimonial-item rounded p-4" style="height: 350px;">
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="d-flex flex-column mx-auto">
+                                    <div class="rounded-circle mb-4" style="border: dashed; border-color: var(--bs-white);height: 200px;">
+                                        <img src="@comment.Picture" class="img-fluid rounded-circle" alt="" style="height: 100%; object-fit: cover;">
+                                    </div>
+                                    <div class="text-center">
+                                        <h4 class="mb-2 text-primary" style="font-size: 22px;">@comment.CompanyManagerName</h4>
+                                        <p class="m-0 text-white" style="font-size: 15px;">@comment.CompanyName</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-8">
+                                <div class="position-absolute" style="top: 20px; right: 25px;">
+                                    <i class="fa fa-quote-right fa-2x text-secondary"></i>
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="d-flex mb-4">
+                                        
+                                    </div>
+                                    <p class="fs-5 mb-0 text-white">
+                                        @comment.Summary
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+    </div>
+</div>
+<!-- Testimonial End -->

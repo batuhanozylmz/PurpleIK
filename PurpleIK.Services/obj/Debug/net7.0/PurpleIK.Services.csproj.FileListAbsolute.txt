@@ -1,0 +1,48 @@
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.deps.json
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.AssemblyInfoInputs.cache
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.AssemblyInfo.cs
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.csproj.CoreCompileInputs.cache
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.sourcelink.json
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\refint\PurpleIK.Services.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\ref\PurpleIK.Services.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Context.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Core.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Entities.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Mapping.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Repositories.dll
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Context.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Entities.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Repositories.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Core.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Mapping.pdb
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.csproj.AssemblyReference.cache
+C:\Users\merve\Desktop\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.D9ADF4CE.Up2Date
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.deps.json
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Services.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Context.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Core.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Entities.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Mapping.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Repositories.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Context.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Entities.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Repositories.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Core.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\bin\Debug\net7.0\PurpleIK.Mapping.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.csproj.AssemblyReference.cache
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.AssemblyInfoInputs.cache
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.AssemblyInfo.cs
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.csproj.CoreCompileInputs.cache
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.sourcelink.json
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.D9ADF4CE.Up2Date
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\refint\PurpleIK.Services.dll
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\PurpleIK.Services.pdb
+C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.Services\obj\Debug\net7.0\ref\PurpleIK.Services.dll

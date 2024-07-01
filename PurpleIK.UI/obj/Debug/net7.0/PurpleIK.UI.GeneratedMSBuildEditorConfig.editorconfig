@@ -1,0 +1,387 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = PurpleIK.UI
+build_property.RootNamespace = PurpleIK.UI
+build_property.ProjectDir = C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.UI\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\merve\Desktop\.Net Eğitimi\PurpleIK\PurpleIK\PurpleIK.UI
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/CompanyEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cQ29tcGFueUVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/GetAllActiveCompanies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cR2V0QWxsQWN0aXZlQ29tcGFuaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/GetAllApprovalCompanies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cR2V0QWxsQXBwcm92YWxDb21wYW5pZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Admin/ShowAlert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWRtaW5cU2hvd0FsZXJ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Membership/AddMembership.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc2hpcFxBZGRNZW1iZXJzaGlwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Membership/EditMembership.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc2hpcFxFZGl0TWVtYmVyc2hpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Membership/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWVtYmVyc2hpcFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Permission/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGVybWlzc2lvblxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Permission/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGVybWlzc2lvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Permission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUGVybWlzc2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Comment/CommentAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tbWVudFxDb21tZW50QWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Comment/CommentReject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tbWVudFxDb21tZW50UmVqZWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Comment/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tbWVudFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Comment/ListComment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tbWVudFxMaXN0Q29tbWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyManagerPersmission/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1hbmFnZXJQZXJzbWlzc2lvblxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyManagerPersmission/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1hbmFnZXJQZXJzbWlzc2lvblxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyManagerPersmission/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1hbmFnZXJQZXJzbWlzc2lvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyManagerPersmission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1hbmFnZXJQZXJzbWlzc2lvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyMembership/Membership.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1lbWJlcnNoaXBcTWVtYmVyc2hpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/CompanyMembership/MembershipList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueU1lbWJlcnNoaXBcTWVtYmVyc2hpcExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Company/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcQ29tcGFueVxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Debit/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRGViaXRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Debit/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRGViaXRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Debit/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRGViaXRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Debit/ListDebit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRGViaXRcTGlzdERlYml0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/EmployeeManager/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRW1wbG95ZWVNYW5hZ2VyXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/EmployeeManager/EmployeeAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRW1wbG95ZWVNYW5hZ2VyXEVtcGxveWVlQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/EmployeeManager/EmployeeEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRW1wbG95ZWVNYW5hZ2VyXEVtcGxveWVlRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/EmployeeManager/ListEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRW1wbG95ZWVNYW5hZ2VyXExpc3RFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Expense/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRXhwZW5zZVxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Expense/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcRXhwZW5zZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PersonalInformation/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUGVyc29uYWxJbmZvcm1hdGlvblxBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PersonalInformation/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUGVyc29uYWxJbmZvcm1hdGlvblxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PersonalInformation/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUGVyc29uYWxJbmZvcm1hdGlvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PersonalInformation/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUGVyc29uYWxJbmZvcm1hdGlvblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PushMoney/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUHVzaE1vbmV5XEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PushMoney/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUHVzaE1vbmV5XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/PushMoney/List.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcUHVzaE1vbmV5XExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shift/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hpZnRcQWRkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shift/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hpZnRcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shift/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hpZnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/DebitEmployee/DeActiveDebit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRGViaXRFbXBsb3llZVxEZUFjdGl2ZURlYml0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/DebitEmployee/DebitEmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRGViaXRFbXBsb3llZVxEZWJpdEVtcGxveWVlTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/DebitEmployee/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRGViaXRFbXBsb3llZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/EmployeePermission/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRW1wbG95ZWVQZXJtaXNzaW9uXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/EmployeePermission/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRW1wbG95ZWVQZXJtaXNzaW9uXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/EmployeePermission/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRW1wbG95ZWVQZXJtaXNzaW9uXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/EmployeePermission/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRW1wbG95ZWVQZXJtaXNzaW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/Employee/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRW1wbG95ZWVcSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/ExpenseEmployee/Add.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRXhwZW5zZUVtcGxveWVlXEFkZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/ExpenseEmployee/DeActiveExpense.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRXhwZW5zZUVtcGxveWVlXERlQWN0aXZlRXhwZW5zZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/ExpenseEmployee/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRXhwZW5zZUVtcGxveWVlXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/ExpenseEmployee/ExpenseEmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcRXhwZW5zZUVtcGxveWVlXEV4cGVuc2VFbXBsb3llZUxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/Shared/_EmployeeLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcU2hhcmVkXF9FbXBsb3llZUxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Employee/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRW1wbG95ZWVcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Account/CompanyRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDb21wYW55UmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Account/Memberships.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxNZW1iZXJzaGlwcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Account/PersonalSettings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQZXJzb25hbFNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Comment/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Comment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29tbWVudFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Home/AboutUs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dFVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Home/Apps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcHBzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Home/ErrorPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFcnJvclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Home/Pages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYWdlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/_PagesLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYWdlc0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-63xja41fwe
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Areas/CompanyManager/Views/Shared/_CompanyLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueU1hbmFnZXJcVmlld3NcU2hhcmVkXF9Db21wYW55TGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-8ak9rf0skg
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXDQwNC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-4rugvq42dv
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/_CompanyLayoutMembership.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21wYW55TGF5b3V0TWVtYmVyc2hpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-aty2l3idq0
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-yaf9658j30
+
+[C:/Users/merve/Desktop/.Net Eğitimi/PurpleIK/PurpleIK/PurpleIK.UI/Views/Shared/_LoginRegister.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblJlZ2lzdGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = b-4sxl0rnhai
